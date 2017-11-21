@@ -17,7 +17,7 @@ class ServiceStore {
 	}
 
 	onGetMessageSuccess(payload) {
-		this.services.push(payload);
+		this.services = payload
 	}
 
 	onGetMessageFail(errorMessage) {

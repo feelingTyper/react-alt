@@ -19,7 +19,6 @@ class ServiceActions {
 			data: {}
 		}).done((data) => {
 			// assign(payload, data)
-			console.log(data)
 			this.actions.getMessageSuccess(data);
 		}).fail(() => {
 			this.actions.getMessageFail(data);

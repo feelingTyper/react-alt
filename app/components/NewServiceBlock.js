@@ -11,8 +11,8 @@ class NewServiceBlock extends React.Component {
     render() {
         let service = this.props.service;
         let imgsrc = service.imgsrc;
-        let info = service.serviceInfo;
-        let serviceName = service.serviceName;
+        let info = service.content;
+        let serviceName = service.title;
         let linkto = service.linkto;
 
         return (
