@@ -70,7 +70,7 @@ class Team extends React.Component {
                         <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR TEAM'}} /></div>
                         <div className="row" style={{marginBottom: '50px'}}>
                             <div className="col-md-7">
-                                <img className="team_img" src="img/1.jpg" />
+                                <img className="img-responsive" src="img/1.jpg" />
                             </div>
                             <div className="col-xs-5">
                                 <p>整体介绍团队特点，包括研究方向，老师学生人数等</p>

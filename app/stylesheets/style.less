@@ -2,18 +2,31 @@
 @body-bg: #fff;
 @sb-bg: #a3b4c5;
 @sbhover-bg: #336633;
-@content-color: #888;
+@content-color: #aaa;
 @border-color: #ddd;
 @topology-color: #f0f3f5;
-
+@green-color: rgb(74, 179, 68);
+@red-color: rgb(255, 102, 55);
+@orange-color: rgb(255, 192, 1);
 nav {
     height: 120px;
     box-shadow: none;
 }
 
 #navbar {
-    padding-top: 35px;
+    // padding-top: 35px;
     position: relative;
+    height: 120px !important;
+
+    .navbar-header {
+        height: 120px;
+    }
+    .navbar-brand {
+        padding: 0 0;
+        // height: 120px;
+        line-height: 50px;
+        margin-top: 35px;
+    } 
 }
 
 .navbar {
@@ -28,10 +41,16 @@ nav {
 .nav-right {
     float: right;
     margin-right: 100px;
+    height: 120px;
     li {
         line-height: 120px;
         width: 120px;
         text-align: center;
+
+        a {
+            line-height: 120px;
+            padding: 0 0;
+        }
     }
 }
 
@@ -98,13 +117,36 @@ nav {
 }
 
 .data-block {
-    text-align: center;
     .table>thead>tr>th {
         text-align: center;
     }
     .data-title {
-        text-align: center;
         padding:10px 0;
+        div {
+            // border-bottom: 1px solid @green-color;
+            font-size: 14px;
+        }
+        .con {
+            color:@content-color;
+        }
+        .bor {
+            width: 40px;
+            margin: 20px 0;
+            border-bottom: 3px solid @green-color;
+        }
+    }
+
+    .collections {
+        padding: 20px 0;
+        color: @green-color;
+        line-height: 35px;
+        div {
+            border-bottom: 1px dotted @border-color;
+        }
+        a {
+            color: @orange-color;
+            float: right;
+        }
     }
 }
 
@@ -142,11 +184,23 @@ nav {
 
 .carousel-control {
     top: 50%;
-    width:3%;
+    width:86px;
+    height:86px;
 }
 
 .carousel-control.left, .carousel-control.right {
     background-image: none;
+    &hover {
+        background-color: rgba(0, 0, 0, .5);
+    }
+}
+
+.carousel-control.left {
+    background: url('../img/slide_left.png') no-repeat;
+}
+
+.carousel-control.right {
+    background: url('../img/slide_right.png') no-repeat;
 }
 
 .news {
@@ -180,6 +234,7 @@ nav {
 }
 
 .team {
+    margin-top: -20px;
     .team_img {
         height: 280px;
         width: 400px;
@@ -227,6 +282,7 @@ nav {
 
 
 .project {
+    margin-top: -20px;
     ul {
         list-style: none;
     }
@@ -354,6 +410,7 @@ nav {
 /*resource*/
 .resource {
     margin-bottom: 50px;
+    margin-top: -20px;
 
     .pic {
         background: url('../img/2.jpg');
@@ -364,22 +421,24 @@ nav {
         .des-block {
             background-color: #fff;
             margin-bottom: 20px;  
-            border-top: 1px solid @border-color;
-            border-bottom: 1px solid @border-color;
+            // border-top: 1px solid @border-color;
+            // border-bottom: 1px solid @border-color;
 
             .des-title {
                 line-height: 20px;
                 padding: 30px;
                 font-size: 18px;
-                border-bottom: 1px solid @border-color;
+                // border-bottom: 1px solid @border-color;
             }
 
             .paper-item {
                 line-height: 25px;
                 padding: 10px 0;
+                a {
+                    color: @orange-color;
+                }
+                border-bottom: 1px solid #f0f3f5;
             }
         }
     }
-
-
 }

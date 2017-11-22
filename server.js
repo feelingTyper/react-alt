@@ -22,6 +22,7 @@ var character = require('./routers/character');
 var config = require('./config');
 var FileStreamRotator = require('file-stream-rotator')
 var routes = require('./app/routes');
+var fs = require('fs')
 var app = express();
 
 mongoose.connect(config.database);

@@ -107,16 +107,15 @@ class Resource extends React.Component {
 
         return (
             <div className="resource clearfix">
-                
+                <div className="pic">
+                </div>
                 <div className="resource-des" style={{marginTop: '20px'}}>
-                    <div className="pic">
-                    </div>
                     <HomeModuleTitle  title={{cn: '论文', en: 'PAPER'}} />
                     <div className="container">
                         <ResourceDes  resourceDes={Resources} />
                     </div>
                 </div>
-                <div className="resource-data" style={{backgroundColor: '#f0f3f5',paddingBottom:'50px'}}>
+                <div className="resource-data" style={{backgroundColor: '#fff',paddingBottom:'50px', marginTop:'50px'}}>
                     <ResourceData resourceData={resourceData} />
                 </div>
                 <div className="resource-tools">

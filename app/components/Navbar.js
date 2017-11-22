@@ -90,7 +90,7 @@ class Navbar extends React.Component {
                 <div className='tri'></div>
                 <div className='tri invert'></div>
               </span>
-              BJTU
+              <span style={{fontSize: '32px', marginLeft: '70px', marginRight: '5px'}}>Information&nbsp;&nbsp;<font style={{color: '#788994'}}>Security</font></span>
               <span className='badge badge-up badge-danger'>{this.state.onlineUsers}</span>
             </Link>
           </div>

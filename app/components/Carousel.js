@@ -25,9 +25,9 @@ class Carousel extends React.Component {
                     </div>
                 </div>
                 <a className="carousel-control right" href="#myCarousel" 
-                   data-slide="prev">forward</a>
+                   data-slide="prev"></a>
                 <a className="carousel-control left" href="#myCarousel" 
-                   data-slide="next">back</a>
+                   data-slide="next"></a>
             </div>
         )
     }

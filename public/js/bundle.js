@@ -819,18 +819,10 @@ var Carousel = function (_React$Component) {
                         _react2.default.createElement("img", { src: "/img/3.jpg", alt: "Third slide" })
                     )
                 ),
-                _react2.default.createElement(
-                    "a",
-                    { className: "carousel-control right", href: "#myCarousel",
-                        "data-slide": "prev" },
-                    "forward"
-                ),
-                _react2.default.createElement(
-                    "a",
-                    { className: "carousel-control left", href: "#myCarousel",
-                        "data-slide": "next" },
-                    "back"
-                )
+                _react2.default.createElement("a", { className: "carousel-control right", href: "#myCarousel",
+                    "data-slide": "prev" }),
+                _react2.default.createElement("a", { className: "carousel-control left", href: "#myCarousel",
+                    "data-slide": "next" })
             );
         }
     }]);
@@ -2043,7 +2035,16 @@ var Navbar = function (_React$Component) {
                 _react2.default.createElement('div', { className: 'tri' }),
                 _react2.default.createElement('div', { className: 'tri invert' })
               ),
-              'BJTU',
+              _react2.default.createElement(
+                'span',
+                { style: { fontSize: '32px', marginLeft: '70px', marginRight: '5px' } },
+                'Information\xA0\xA0',
+                _react2.default.createElement(
+                  'font',
+                  { style: { color: '#788994' } },
+                  'Security'
+                )
+              ),
               _react2.default.createElement(
                 'span',
                 { className: 'badge badge-up badge-danger' },
@@ -2612,10 +2613,10 @@ var Resource = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'resource clearfix' },
+                _react2.default.createElement('div', { className: 'pic' }),
                 _react2.default.createElement(
                     'div',
                     { className: 'resource-des', style: { marginTop: '20px' } },
-                    _react2.default.createElement('div', { className: 'pic' }),
                     _react2.default.createElement(_HomeModuleTitle2.default, { title: { cn: '论文', en: 'PAPER' } }),
                     _react2.default.createElement(
                         'div',
@@ -2625,7 +2626,7 @@ var Resource = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'resource-data', style: { backgroundColor: '#f0f3f5', paddingBottom: '50px' } },
+                    { className: 'resource-data', style: { backgroundColor: '#fff', paddingBottom: '50px', marginTop: '50px' } },
                     _react2.default.createElement(_ResourceData2.default, { resourceData: resourceData })
                 ),
                 _react2.default.createElement(
@@ -2659,6 +2660,10 @@ var _ResourceDataBlock = require('./ResourceDataBlock');
 
 var _ResourceDataBlock2 = _interopRequireDefault(_ResourceDataBlock);
 
+var _HomeModuleTitle = require('./HomeModuleTitle');
+
+var _HomeModuleTitle2 = _interopRequireDefault(_HomeModuleTitle);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2681,9 +2686,10 @@ var ResourceData = function (_React$Component) {
         value: function render() {
             var datas = this.props.resourceData;
             var dataList = datas.map(function (data, index) {
+                var classstyle = index % 2 == 0 ? 'col-xs-5' : 'col-xs-5 col-xs-offset-2';
                 return _react2.default.createElement(
                     'div',
-                    { className: 'col-xs-6', key: index },
+                    { className: classstyle, key: index },
                     _react2.default.createElement(_ResourceDataBlock2.default, { resourceData: data, usefor: 'dataset' })
                 );
             });
@@ -2693,12 +2699,8 @@ var ResourceData = function (_React$Component) {
                 { className: 'container' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'res-data-title' },
-                    _react2.default.createElement(
-                        'h2',
-                        null,
-                        '\u6570\u636E'
-                    )
+                    { style: { marginTop: '20px' } },
+                    _react2.default.createElement(_HomeModuleTitle2.default, { title: { cn: '数据集', en: 'DATASET' } })
                 ),
                 _react2.default.createElement(
                     'div',
@@ -2714,7 +2716,7 @@ var ResourceData = function (_React$Component) {
 
 exports.default = ResourceData;
 
-},{"./ResourceDataBlock":31,"react":"react"}],31:[function(require,module,exports){
+},{"./HomeModuleTitle":22,"./ResourceDataBlock":31,"react":"react"}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2752,21 +2754,17 @@ var ResourceDataBlock = function (_React$Component) {
             var title = usefor == 'dataset' ? '数据集' : '工具';
             var rows = data.collections.map(function (item, index) {
                 return _react2.default.createElement(
-                    'tr',
+                    'div',
                     { key: index },
                     _react2.default.createElement(
-                        'td',
+                        'span',
                         null,
                         item.name
                     ),
                     _react2.default.createElement(
-                        'td',
-                        null,
-                        _react2.default.createElement(
-                            'a',
-                            { href: item.url, target: '_blank' },
-                            item.url
-                        )
+                        'a',
+                        { href: item.url, target: '_blank' },
+                        '\u4F7F\u7528\u65B9\u5F0F\u548C\u4E0B\u8F7D'
                     )
                 );
             });
@@ -2776,34 +2774,27 @@ var ResourceDataBlock = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'data-title' },
-                    data.title
-                ),
-                _react2.default.createElement(
-                    'table',
-                    { className: 'table' },
                     _react2.default.createElement(
-                        'thead',
+                        'div',
                         null,
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'th',
-                                null,
-                                title
-                            ),
-                            _react2.default.createElement(
-                                'th',
-                                null,
-                                '\u4F7F\u7528\u65B9\u6CD5\u53CA\u4E0B\u8F7D\u5730\u5740'
-                            )
-                        )
+                        data.title
                     ),
                     _react2.default.createElement(
-                        'tbody',
-                        null,
-                        rows
-                    )
+                        'div',
+                        { className: 'con' },
+                        'INNER DATASET'
+                    ),
+                    _react2.default.createElement('div', { className: 'bor' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'data-info' },
+                    '\u5B9E\u9A8C\u5BA4\u7684\u5185\u90E8\u6570\u636E\u96C6\u662F\u5728\u6211\u4EEC\u642D\u5EFA\u7684\u667A\u80FD\u5316\u4FE1\u606F\u5B89\u5168\u5B9E\u9A8C\u5E73\u53F0\u4E0A\u5B8C\u6210\u7684\u4E00\u4E2A\u5B9E\u9A8C\u8FC7\u7A0B\u4E2D\u91C7\u96C6\u7684\u5404\u79CD\u653B\u51FB\u6570\u636E\u3002'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'collections' },
+                    rows
                 )
             );
         }
@@ -2931,8 +2922,8 @@ var ResourceDesBlock = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-xs-2 download more' },
-                        '\u4E0B\u8F7D'
+                        { className: 'col-xs-2 ' },
+                        '\u8BE6\u7EC6'
                     )
                 );
             });
@@ -2980,6 +2971,10 @@ var _ResourceDataBlock = require('./ResourceDataBlock');
 
 var _ResourceDataBlock2 = _interopRequireDefault(_ResourceDataBlock);
 
+var _HomeModuleTitle = require('./HomeModuleTitle');
+
+var _HomeModuleTitle2 = _interopRequireDefault(_HomeModuleTitle);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3002,9 +2997,10 @@ var ResourceTools = function (_React$Component) {
         value: function render() {
             var datas = this.props.resourceTools;
             var dataList = datas.map(function (data, index) {
+                var classstyle = index % 2 == 0 ? 'col-xs-5' : 'col-xs-5 col-xs-offset-2';
                 return _react2.default.createElement(
                     'div',
-                    { className: 'col-xs-6', key: index },
+                    { className: classstyle, key: index },
                     _react2.default.createElement(_ResourceDataBlock2.default, { resourceData: data, usefor: 'tools' })
                 );
             });
@@ -3017,12 +3013,8 @@ var ResourceTools = function (_React$Component) {
                     { className: 'tools-title clearfix' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'circle' },
-                        _react2.default.createElement(
-                            'h2',
-                            null,
-                            '\u5DE5\u5177'
-                        )
+                        { style: { marginTop: '20px' } },
+                        _react2.default.createElement(_HomeModuleTitle2.default, { title: { cn: '工具', en: 'TOOLS' } })
                     )
                 ),
                 _react2.default.createElement(
@@ -3039,7 +3031,7 @@ var ResourceTools = function (_React$Component) {
 
 exports.default = ResourceTools;
 
-},{"./ResourceDataBlock":31,"react":"react"}],35:[function(require,module,exports){
+},{"./HomeModuleTitle":22,"./ResourceDataBlock":31,"react":"react"}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3530,7 +3522,7 @@ var Team = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'col-md-7' },
-                                _react2.default.createElement('img', { className: 'team_img', src: 'img/1.jpg' })
+                                _react2.default.createElement('img', { className: 'img-responsive', src: 'img/1.jpg' })
                             ),
                             _react2.default.createElement(
                                 'div',
