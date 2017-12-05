@@ -15,7 +15,6 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     NavbarStore.listen(this.onChange);
-    NavbarActions.getCharacterCount();
 
     let socket = io.connect();
 
@@ -90,7 +89,10 @@ class Navbar extends React.Component {
                 <div className='tri'></div>
                 <div className='tri invert'></div>
               </span>
-              <span style={{fontSize: '32px', marginLeft: '70px', marginRight: '5px'}}>Information&nbsp;&nbsp;<font style={{color: '#788994'}}>Security</font></span>
+              <sapn className="cn-logo">智能化网络信息安全实验平台</sapn>
+              <span style={{fontSize: '32px', marginLeft: '70px', marginRight: '5px'}}>
+              Information&nbsp;&nbsp;<font style={{color: '#788994'}}>Security</font>
+              </span> 
               <span className='badge badge-up badge-danger'>{this.state.onlineUsers}</span>
             </Link>
           </div>

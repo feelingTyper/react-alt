@@ -1,10 +1,10 @@
 {
-  "name": "newedenfaces",
-  "description": "Character voting app for EVE Online",
+  "name": "information-security",
+  "description": "a platform for information security experiment.",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/newedenfaces-react"
+    "url": "https://github.com/feelingtyper/information-security"
   },
   "main": "server.js",
   "scripts": {

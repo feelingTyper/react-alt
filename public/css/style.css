@@ -1,6 +1,15 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
 nav {
   height: 120px;
   box-shadow: none;
+}
+ul {
+  list-style: none;
 }
 #navbar {
   position: relative;
@@ -13,6 +22,14 @@ nav {
   padding: 0 0;
   line-height: 50px;
   margin-top: 35px;
+}
+#navbar .navbar-brand .cn-logo {
+  position: absolute;
+  font-size: 12px;
+  top: -25px;
+  left: 73px;
+  letter-spacing: 15px;
+  color: #4ab344;
 }
 .navbar {
   border: none;
@@ -229,7 +246,6 @@ nav {
 .project {
   margin-top: -20px;
   /*悬浮*/
-  /*ul.sis-li li .v1 .div h3{ line-height:20px; padding-bottom:10px; display:block;color:#FFF; overflow:hidden}*/
 }
 .project ul {
   list-style: none;
@@ -363,4 +379,53 @@ nav {
 }
 .resource .resource-des .des-block .paper-item a {
   color: #ffc001;
+}
+.devices-list .dev-list {
+  color: #fff;
+  padding: 0;
+  position: fixed;
+}
+.devices-list .left ul li {
+  line-height: 50px;
+  text-align: left;
+  padding: 0 30px;
+  border-bottom: 1px solid #fff;
+  background-color: #f4f5f8;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+.devices-list .left ul li:hover {
+  border-left: 5px solid #4ab344;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  background-color: #f4f5f8;
+}
+.devices-list .left ul li a {
+  color: #4ab344;
+  text-decoration: none;
+}
+.devices-list .right .devices {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+}
+.devices-list .right .devices .dev-name {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 60px;
+}
+.devices-list .right .devices .title img {
+  margin: 0 auto;
+}
+.devices-list .right .devices .title div {
+  margin-top: 15px;
+}
+.devices-list .right .devices .detail {
+  margin-bottom: 25px;
+  border-bottom: 2px solid #4ab344;
+  padding: 5px;
+  width: 80px;
+}
+.devices-list .right .devices .dev-content {
+  margin-top: 20px;
 }

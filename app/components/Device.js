@@ -1,5 +1,8 @@
 import React from 'react';
 import HomeModuleTitle from './HomeModuleTitle';
+import {
+    Link
+} from 'react-router';
 
 class Device extends React.Component {
     constructor(props) {
@@ -8,36 +11,37 @@ class Device extends React.Component {
 
     render() {
         let contents = [{
-            img: '/img/1.jpg',
-            subTitle: '云数据中心操作系统',
-            content: '秉承开放化、模块化、标准化计的基于虚拟化技术'
+            img: '/img/ruijie_sw.jpg',
+            subTitle: '锐捷交换机',
+            content: '划分vlan，接入局域网主机'
 
         }, {
-            img: '/img/2.jpg',
-            subTitle: '复合大数据',
-            content: '海量、高增长率和多样化的信息资产，提供数据处理，分析，增值能力。'
+            img: '/img/cisco.jpeg',
+            subTitle: '思科交换机',
+            content: '接入DMZ，提供web等对外服务'
 
         }, {
-            img: '/img/3.jpg',
-            subTitle: '云计算',
-            content: '用户通过电脑、笔记本、手机等方式接 入数据中心，按自己的需求进行运算。'
+            img: '/img/tianrongxin.png',
+            subTitle: '天融信防火墙',
+            content: '网络入口设备，隔离网络攻击'
 
         }, {
-            img: '/img/4.jpg',
-            subTitle: '云计算',
-            content: '用户通过电脑、笔记本、手机等方式接 入数据中心，按自己的需求进行运算。'
+            img: '/img/tianrongxin_ids.jpg',
+            subTitle: '天融信入侵检测系统',
+            content: '检测网络攻击，及时预警，做出安全响应'
 
         }];
 
         let contentList = contents.map((item, index) => {
+            let device = '/devicesList';
             return (
                 <div className="col-xs-3" style={{textAlign:'center'}} key={index}>
-
-                    <img className="img-responsive" src={item.img} alt=""/>
-                    <p>{item.subTitle}</p>
-                    <img src="/img/line1.png" alt=""/>
+                    <Link to='/devicesList'>
+                        <img className="img-responsive" style={{width:'262px', height: '104px'}}  src={item.img} alt=""/>
+                        <p style={{marginTop:'10px'}}>{item.subTitle}</p>
+                    </Link>
                     <hr/>
-                    <p style={{textAlign:'left'}}>{item.content}</p>
+                    <p style={{textAlign:'center'}}>{item.content}</p>
                 </div>
             )
         })

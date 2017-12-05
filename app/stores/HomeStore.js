@@ -5,6 +5,7 @@ class HomeStore {
   constructor() {
     this.bindActions(HomeActions);
     this.characters = [];
+
   }
 
   onGetTwoCharactersSuccess(data) {

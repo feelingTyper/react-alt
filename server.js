@@ -17,7 +17,7 @@ var ReactDOM = require('react-dom/server');
 var Router = require('react-router');
 var swig = require('swig');
 var xml2js = require('xml2js');
-var services = require('./routers/index');
+var services = require('./routers/services');
 var character = require('./routers/character');
 var config = require('./config');
 var FileStreamRotator = require('file-stream-rotator')
@@ -64,9 +64,12 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-/*register routers*/
-app.use('/', character);
+/*
+ * register routers
+ * 
+ */
 app.use('/api', services);
+// app.use('/', character);
 
 
 

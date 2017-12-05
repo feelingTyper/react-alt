@@ -9,18 +9,18 @@ class Intention extends React.Component {
     render() {
         let contents = [{
             img: '/img/os.png',
-            subTitle: '云数据中心操作系统',
-            content: '秉承开放化、模块化、标准化计的基于虚拟化技术'
+            subTitle: '攻防实验平台',
+            content: '攻击防御实验，模拟真实网络运行状态，感知网络态势'
 
         }, {
             img: '/img/bigdata.png',
-            subTitle: '复合大数据',
-            content: '海量、高增长率和多样化的信息资产，提供数据处理，分析，增值能力。'
+            subTitle: '大数据分析',
+            content: 'hadoop分布式数据存储计算平台，海量数据融合分析处理'
 
         }, {
             img: '/img/cloud.png',
-            subTitle: '云计算',
-            content: '用户通过电脑、笔记本、手机等方式接 入数据中心，按自己的需求进行运算。'
+            subTitle: '数据开放服务',
+            content: '论文算法，公开数据集，实验室内部数据集开放下载服务'
 
         }];
 
