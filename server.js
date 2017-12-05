@@ -25,7 +25,22 @@ var routes = require('./app/routes');
 var fs = require('fs')
 var app = express();
 
-mongoose.connect(config.database);
+var options = {
+  useMongoClient: true,
+  autoIndex: false, // Don't build indexes
+  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
+  reconnectInterval: 500, // Reconnect every 500ms
+  poolSize: 10, // Maintain up to 10 socket connections
+  // If not connected, return errors immediately rather than waiting for reconnect
+  bufferMaxEntries: 0
+};
+
+mongoose.connect(config.database, options, function(error) {
+  if (error) {
+    console.log('Error occurs in trying to connecting the MongoDB.');
+    console.log(error);
+  }
+});
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
 });

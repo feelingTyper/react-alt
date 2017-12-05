@@ -18,7 +18,6 @@ class ServiceActions {
 			url: 'api/services',
 			data: {}
 		}).done((data) => {
-			// assign(payload, data)
 			this.actions.getMessageSuccess(data);
 		}).fail(() => {
 			this.actions.getMessageFail(data);

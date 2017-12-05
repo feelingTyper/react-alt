@@ -10,6 +10,7 @@ import HomePage from './components/HomePage';
 import Team from './components/Team';
 import Project from './components/Project';
 import DevicesList from './components/DevicesList';
+import ServicesList from './components/ServicesList';
 
 export default (
   <Route component={App}>
@@ -20,5 +21,6 @@ export default (
     <Route path='/team' component={Team} />
     <Route path='/projects' component={Project} />
     <Route path='/devicesList' component={DevicesList} />
+    <Route path='/services/detail/:name' component={ServicesList} />
   </Route>
 );

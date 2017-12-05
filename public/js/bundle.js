@@ -241,7 +241,6 @@ var ServiceActions = function () {
 				url: 'api/services',
 				data: {}
 			}).done(function (data) {
-				// assign(payload, data)
 				_this.actions.getMessageSuccess(data);
 			}).fail(function () {
 				_this.actions.getMessageFail(data);
@@ -849,7 +848,7 @@ var DevicesList = function (_React$Component) {
 
 exports.default = DevicesList;
 
-},{"../actions/DevicesListActions":1,"../stores/DevicesListStores":33,"react":"react"}],14:[function(require,module,exports){
+},{"../actions/DevicesListActions":1,"../stores/DevicesListStores":34,"react":"react"}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -897,7 +896,24 @@ var Footer = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       _FooterStore2.default.listen(this.onChange);
-      // FooterActions.getTopCharacters();
+
+      //回到顶点功能
+      $(function () {
+        $(window).scroll(function () {
+          if ($(window).scrollTop() > 100) {
+            $(".top").fadeIn(800);
+          } else {
+            $(".top").fadeOut(800);
+          }
+        });
+
+        $(".top").click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          }, 400);
+          return false;
+        });
+      });
     }
   }, {
     key: 'componentWillUnmount',
@@ -963,6 +979,11 @@ var Footer = function (_React$Component) {
               )
             )
           )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'top' },
+          '\u56DE\u5230\u9876\u90E8'
         )
       );
     }
@@ -973,7 +994,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"../actions/FooterActions":2,"../stores/FooterStore":34,"react":"react","react-router":"react-router"}],15:[function(require,module,exports){
+},{"../actions/FooterActions":2,"../stores/FooterStore":35,"react":"react","react-router":"react-router"}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1185,7 +1206,7 @@ var HomePage = function (_React$Component) {
 
 exports.default = HomePage;
 
-},{"../actions/HomePageActions":3,"../stores/HomePageStore":35,"./Carousel":11,"./Device":12,"./Intention":17,"./News":20,"./Topology":30,"react":"react"}],17:[function(require,module,exports){
+},{"../actions/HomePageActions":3,"../stores/HomePageStore":36,"./Carousel":11,"./Device":12,"./Intention":17,"./News":20,"./Topology":31,"react":"react"}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1492,7 +1513,7 @@ var Navbar = function (_React$Component) {
 
 exports.default = Navbar;
 
-},{"../actions/NavbarActions":4,"../stores/NavbarStore":36,"react":"react","react-router":"react-router"}],19:[function(require,module,exports){
+},{"../actions/NavbarActions":4,"../stores/NavbarStore":37,"react":"react","react-router":"react-router"}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1528,10 +1549,36 @@ var NewServiceBlock = function (_React$Component) {
         key: 'render',
         value: function render() {
             var service = this.props.service;
-            var imgsrc = service.imgsrc;
-            var info = service.content;
-            var serviceName = service.title;
-            var linkto = service.linkto;
+            var type = service.type;
+            var content = service.content;
+            var servicesList = content.map(function (item, index) {
+                var blank = item.appendix ? true : false;
+                if (!blank) {
+                    return _react2.default.createElement(
+                        'li',
+                        { className: 'services-list', key: index },
+                        _react2.default.createElement(
+                            'a',
+                            { href: item.url, target: '_blank' },
+                            item.name
+                        )
+                    );
+                } else {
+                    var path = {
+                        pathname: item.url,
+                        state: item.appendix
+                    };
+                    return _react2.default.createElement(
+                        'li',
+                        { className: 'services-list', key: index },
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: path },
+                            item.name
+                        )
+                    );
+                }
+            });
 
             return _react2.default.createElement(
                 'div',
@@ -1539,7 +1586,7 @@ var NewServiceBlock = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'img-wrap col-xs-2' },
-                    _react2.default.createElement('img', { src: imgsrc, alt: '' })
+                    _react2.default.createElement('img', { src: '', alt: '' })
                 ),
                 _react2.default.createElement(
                     'div',
@@ -1550,18 +1597,27 @@ var NewServiceBlock = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'ns-title col-xs-10' },
-                            serviceName
+                            type
                         ),
                         _react2.default.createElement(
                             'div',
                             { className: 'more col-xs-2' },
-                            '\u67E5\u770B'
+                            '\u66F4\u591A'
                         )
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'ns-content' },
-                        info
+                        { className: 'ns-content', style: { display: 'none' } },
+                        'dsf'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'services' },
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            servicesList
+                        )
                     )
                 )
             );
@@ -1836,7 +1892,7 @@ var Project = function (_React$Component) {
 
 exports.default = Project;
 
-},{"../actions/ProjectActions":5,"../stores/ProjectStore":37,"react":"react"}],22:[function(require,module,exports){
+},{"../actions/ProjectActions":5,"../stores/ProjectStore":38,"react":"react"}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2024,7 +2080,7 @@ var Resource = function (_React$Component) {
 
 exports.default = Resource;
 
-},{"../actions/ResourceActions":6,"../stores/ResourceStore":38,"./HomeModuleTitle":15,"./ResourceData":23,"./ResourceDes":25,"./ResourceTools":27,"react":"react"}],23:[function(require,module,exports){
+},{"../actions/ResourceActions":6,"../stores/ResourceStore":39,"./HomeModuleTitle":15,"./ResourceData":23,"./ResourceDes":25,"./ResourceTools":27,"react":"react"}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2470,7 +2526,7 @@ var Service = function (_React$Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			_ServiceStore2.default.listen(this.onChange);
-			_ServiceActions2.default.getDefaultMessage();
+			// ServiceAction.getDefaultMessage();
 			// ServiceAction.setMessage();
 		}
 	}, {
@@ -2523,7 +2579,156 @@ var Service = function (_React$Component) {
 
 exports.default = Service;
 
-},{"../actions/ServiceActions":7,"../stores/ServiceStore":39,"./HomeModuleTitle":15,"./NewServiceBlock":19,"react":"react","react-transition-group/TransitionGroup":69}],29:[function(require,module,exports){
+},{"../actions/ServiceActions":7,"../stores/ServiceStore":40,"./HomeModuleTitle":15,"./NewServiceBlock":19,"react":"react","react-transition-group/TransitionGroup":70}],29:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ServicesList = function (_React$Component) {
+    _inherits(ServicesList, _React$Component);
+
+    function ServicesList(props) {
+        _classCallCheck(this, ServicesList);
+
+        return _possibleConstructorReturn(this, (ServicesList.__proto__ || Object.getPrototypeOf(ServicesList)).call(this, props));
+    }
+
+    _createClass(ServicesList, [{
+        key: 'render',
+        value: function render() {
+            var props = this.props.location.state || '';
+            var serviceName = this.props.params.name;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'container' },
+                _react2.default.createElement(
+                    'div',
+                    { style: { fontSize: '32px', textAlign: 'center', marginBottom: '15px' } },
+                    '\u670D\u52A1\u5217\u8868\u9875\u9762'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'main', style: { minHeight: '500px' } },
+                    _react2.default.createElement(
+                        'table',
+                        { className: 'table table-bordered' },
+                        _react2.default.createElement(
+                            'tbody',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u670D\u52A1\u540D\u79F0\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    serviceName
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u670D\u52A1\u5730\u5740\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    props.url
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u670D\u52A1\u7AEF\u53E3\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    props.port
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u767B\u5F55\u8D26\u6237\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    props.username
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u767B\u5F55\u5BC6\u7801\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    props.password
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    '\u767B\u5F55\u65B9\u5F0F\uFF1A'
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    props.des
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ServicesList;
+}(_react2.default.Component);
+
+exports.default = ServicesList;
+
+},{"react":"react"}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2700,7 +2905,7 @@ var Team = function (_React$Component) {
 
 exports.default = Team;
 
-},{"../actions/TeamActions":8,"../stores/TeamStore":40,"./HomeModuleTitle":15,"react":"react"}],30:[function(require,module,exports){
+},{"../actions/TeamActions":8,"../stores/TeamStore":41,"./HomeModuleTitle":15,"react":"react"}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2777,7 +2982,7 @@ var Topology = function (_React$Component) {
 
 exports.default = Topology;
 
-},{"./HomeModuleTitle":15,"react":"react"}],31:[function(require,module,exports){
+},{"./HomeModuleTitle":15,"react":"react"}],32:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -2810,7 +3015,7 @@ _reactDom2.default.render(_react2.default.createElement(
   _routes2.default
 ), document.getElementById('app'));
 
-},{"./routes":32,"history/lib/createBrowserHistory":50,"react":"react","react-dom":"react-dom","react-router":"react-router"}],32:[function(require,module,exports){
+},{"./routes":33,"history/lib/createBrowserHistory":51,"react":"react","react-dom":"react-dom","react-router":"react-router"}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2851,6 +3056,10 @@ var _DevicesList = require('./components/DevicesList');
 
 var _DevicesList2 = _interopRequireDefault(_DevicesList);
 
+var _ServicesList = require('./components/ServicesList');
+
+var _ServicesList2 = _interopRequireDefault(_ServicesList);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createElement(
@@ -2862,10 +3071,11 @@ exports.default = _react2.default.createElement(
   _react2.default.createElement(_reactRouter.Route, { path: '/resources', component: _Resource2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: '/team', component: _Team2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: '/projects', component: _Project2.default }),
-  _react2.default.createElement(_reactRouter.Route, { path: '/devicesList', component: _DevicesList2.default })
+  _react2.default.createElement(_reactRouter.Route, { path: '/devicesList', component: _DevicesList2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/services/detail/:name', component: _ServicesList2.default })
 );
 
-},{"./components/App":10,"./components/DevicesList":13,"./components/HomePage":16,"./components/Project":21,"./components/Resource":22,"./components/Services":28,"./components/Team":29,"react":"react","react-router":"react-router"}],33:[function(require,module,exports){
+},{"./components/App":10,"./components/DevicesList":13,"./components/HomePage":16,"./components/Project":21,"./components/Resource":22,"./components/Services":28,"./components/ServicesList":29,"./components/Team":30,"react":"react","react-router":"react-router"}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2906,7 +3116,7 @@ var DevicesListStores = function () {
 
 exports.default = _alt2.default.createStore(DevicesListStores);
 
-},{"../actions/DevicesListActions":1,"../alt":9}],34:[function(require,module,exports){
+},{"../actions/DevicesListActions":1,"../alt":9}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2952,7 +3162,7 @@ var FooterStore = function () {
 
 exports.default = _alt2.default.createStore(FooterStore);
 
-},{"../actions/FooterActions":2,"../alt":9}],35:[function(require,module,exports){
+},{"../actions/FooterActions":2,"../alt":9}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2995,7 +3205,7 @@ var HomePageStore = function () {
 
 exports.default = _alt2.default.createStore(HomePageStore);
 
-},{"../actions/HomePageActions":3,"../alt":9}],36:[function(require,module,exports){
+},{"../actions/HomePageActions":3,"../alt":9}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3072,7 +3282,7 @@ var NavbarStore = function () {
 
 exports.default = _alt2.default.createStore(NavbarStore);
 
-},{"../actions/NavbarActions":4,"../alt":9}],37:[function(require,module,exports){
+},{"../actions/NavbarActions":4,"../alt":9}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3110,7 +3320,7 @@ var ProjectStore = function () {
 
 exports.default = _alt2.default.createStore(ProjectStore);
 
-},{"../actions/ProjectActions":5,"../alt":9}],38:[function(require,module,exports){
+},{"../actions/ProjectActions":5,"../alt":9}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3157,7 +3367,7 @@ var ResourceStore = function () {
 
 exports.default = _alt2.default.createStore(ResourceStore);
 
-},{"../actions/ResourceActions":6,"../alt":9}],39:[function(require,module,exports){
+},{"../actions/ResourceActions":6,"../alt":9}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3184,7 +3394,177 @@ var ServiceStore = function () {
 
 		this.bindActions(_ServiceActions2.default);
 		this.message = '';
-		this.services = [];
+		this.services = [{
+			type: 'WEB服务',
+			content: [{
+				name: '本站',
+				url: 'http://192.168.10.70',
+				'detail': '智能化信息安全实验平台介绍网站'
+			}, {
+				name: '资源共享网站',
+				url: 'http://192.168.10.200',
+				'detail': '资源共享平台'
+			}, {
+				name: '众创云平台',
+				url: 'http://192.168.10.100:8080',
+				'detail': '多角色工作流控制平台&虚拟资源共享和管理平台'
+			}, {
+				name: '资源共享网站-apache1',
+				url: 'http://192.168.10.203',
+				'detail': '资源共享平台服务器一'
+			}, {
+				name: '资源共享网站-apache2',
+				url: 'http://192.168.10.204',
+				'detail': '资源共享平台服务器二'
+			}, {
+				name: '资源共享平台-tomcat1',
+				url: 'http://192.168.10.103:8080',
+				'detail': '重创云平台服务器一'
+			}, {
+				name: '资源共享平台-tomcat2',
+				url: 'http://192.168.10.104:8080',
+				'detail': '重创云平台服务器二'
+			}]
+		}, {
+			type: '数据库服务',
+			content: [{
+				name: 'Mysql',
+				url: '/services/detail/mysql',
+				'detail': 'mysql数据库服务',
+				appendix: {
+					url: '192.168.10.205',
+					port: '3306',
+					username: 'root',
+					password: '联系管理员',
+					des: '登录方式，使用mysql客户端远程链接，navcat等等。'
+				}
+			}, {
+				name: 'MongoDB',
+				url: '/services/detail/mongodb',
+				'detail': 'mongodb数据库服务',
+				appendix: {
+					url: '192.168.10.105',
+					port: '60000',
+					username: 'root',
+					password: '联系管理员',
+					des: '登录方式，使用mongo客户端远程链接，如robot等等。'
+				}
+			}, {
+				name: 'GridFS',
+				url: '/services/detail/gridfs',
+				'detail': 'GridFS文件系统',
+				appendix: {
+					url: '192.168.10.106',
+					port: '60000',
+					username: 'root',
+					password: '联系管理员',
+					des: '登录方式，使用mongodb客户端远程链接，robot等等。'
+				}
+			}]
+		}, {
+			type: '存储服务',
+			content: [{
+				name: '资源共享网站网络文件系统',
+				url: '/services/detail/NFS',
+				'detail': '资源共享网站网络文件系统',
+				appendix: {
+					url: '192.168.10.206',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '资源共享网站网络文件系统,SSH远程登陆'
+				}
+			}, {
+				name: 'QNAP存储箱',
+				url: 'http://192.168.10.139',
+				'detail': 'QNAP存储箱，云存储系统文件上传下载，备份分享等功能'
+			}, {
+				name: 'FTP从服务器',
+				url: 'ftp://192.168.10.81',
+				'detail': '文件下载服务器，下载文件，工具，图片，视频等功能'
+			}, {
+				name: 'GITLAB服务器',
+				url: 'http://192.168.10.80',
+				'detail': 'GitLab代码托管服务器，代码提交，下载，版本控制，团队合作等功能'
+			}, {
+				name: '日志监控',
+				url: 'http://192.168.10.82',
+				'detail': '日志监控服务器，提供日志监控，数据采集，性能检测等功能'
+			}]
+		}, {
+			type: '安全监控服务',
+			content: [{
+				name: '入侵检测系统SNORT',
+				url: '/services/detail/snort',
+				'detail': '入侵检测系统snort',
+				appendix: {
+					url: '192.168.10.90',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '入侵检测系统， SSH远程登录'
+				}
+			}, {
+				name: '漏洞扫描NESSUS',
+				url: 'https://192.168.10.91:8834',
+				'detail': '漏洞扫描系统，扫描系统漏洞，'
+			}, {
+				name: '流量抓取工具TCPDUMP',
+				url: '/services/detail/tcpdump',
+				'detail': '抓取网络链接流量，分析流量特征',
+				appendix: {
+					url: '192.168.10.60',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '流量抓取工具TCPDUMP， 提供网络链接流量抓取功能，采集网络攻击数据'
+				}
+			}, {
+				name: '性能监控NAGIOS',
+				url: 'http://192.168.10.63',
+				'detail': '性能监控NAGIOS，监控系统性能，评估系统状态'
+			}]
+		}, {
+			type: '系统管理服务',
+			content: [{
+				name: '虚拟化管理FunsionCompute',
+				url: 'http://192.168.10.51',
+				'detail': '虚拟化管理FunsionCompute，管理分配虚拟资源'
+			}, {
+				name: '硬件服务器IBM',
+				url: '/services/detail/ibm',
+				'detail': '硬件服务器IDM,提供USER域虚拟机分发服务。',
+				appendix: {
+					url: '192.168.20.2',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '硬件服务器IDM,提供USER域虚拟机分发服务, SSH远程登录'
+				}
+			}, {
+				name: '硬件服务器HP',
+				url: '/services/detail/hp',
+				'detail': '硬件服务器HP,提供DMZ域虚拟机分发服务。',
+				appendix: {
+					url: '192.168.10.2',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '硬件服务器HP,提供DMZ域虚拟机分发服务, SSH远程登录'
+				}
+			}, {
+				name: '台式服务器',
+				url: '/services/detail/desktop',
+				'detail': '态势服务器,提供数据分析域虚拟机分发服务。',
+				appendix: {
+					url: '192.168.1.2',
+					port: '22',
+					username: 'root',
+					password: '联系管理员',
+					des: '台式服务器,提供数据分析域虚拟机分发服务, SSH远程登录'
+				}
+			}]
+		}];
 	}
 
 	_createClass(ServiceStore, [{
@@ -3219,7 +3599,7 @@ var ServiceStore = function () {
 
 exports.default = _alt2.default.createStore(ServiceStore);
 
-},{"../actions/ServiceActions":7,"../alt":9}],40:[function(require,module,exports){
+},{"../actions/ServiceActions":7,"../alt":9}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3257,7 +3637,7 @@ var TeamStore = function () {
 
 exports.default = _alt2.default.createStore(TeamStore);
 
-},{"../actions/TeamActions":8,"../alt":9}],41:[function(require,module,exports){
+},{"../actions/TeamActions":8,"../alt":9}],42:[function(require,module,exports){
 
 module.exports = function chain(){
   var len = arguments.length
@@ -3279,7 +3659,7 @@ module.exports = function chain(){
   })
 }
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -3375,7 +3755,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":43,"./lib/keys.js":44}],43:[function(require,module,exports){
+},{"./lib/is_arguments.js":44,"./lib/keys.js":45}],44:[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -3397,7 +3777,7 @@ function unsupported(object){
     false;
 };
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -3408,7 +3788,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],45:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /**
  * Indicates that navigation was caused by a call to history.push.
  */
@@ -3440,7 +3820,7 @@ exports['default'] = {
   REPLACE: REPLACE,
   POP: POP
 };
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -3467,7 +3847,7 @@ function loopAsync(turns, work, callback) {
 
   next();
 }
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 (function (process){
 /*eslint-disable no-empty */
 'use strict';
@@ -3539,7 +3919,7 @@ function readState(key) {
 }
 }).call(this,require('_process'))
 
-},{"_process":59,"warning":72}],48:[function(require,module,exports){
+},{"_process":60,"warning":73}],49:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -3620,13 +4000,13 @@ function supportsGoWithoutReloadUsingHash() {
   var ua = navigator.userAgent;
   return ua.indexOf('Firefox') === -1;
 }
-},{}],49:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 exports.canUseDOM = canUseDOM;
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3808,7 +4188,7 @@ exports['default'] = createBrowserHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./Actions":45,"./DOMStateStorage":47,"./DOMUtils":48,"./ExecutionEnvironment":49,"./createDOMHistory":51,"./parsePath":56,"_process":59,"invariant":58}],51:[function(require,module,exports){
+},{"./Actions":46,"./DOMStateStorage":48,"./DOMUtils":49,"./ExecutionEnvironment":50,"./createDOMHistory":52,"./parsePath":57,"_process":60,"invariant":59}],52:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3852,7 +4232,7 @@ exports['default'] = createDOMHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./DOMUtils":48,"./ExecutionEnvironment":49,"./createHistory":52,"_process":59,"invariant":58}],52:[function(require,module,exports){
+},{"./DOMUtils":49,"./ExecutionEnvironment":50,"./createHistory":53,"_process":60,"invariant":59}],53:[function(require,module,exports){
 //import warning from 'warning'
 'use strict';
 
@@ -4144,7 +4524,7 @@ function createHistory() {
 
 exports['default'] = createHistory;
 module.exports = exports['default'];
-},{"./Actions":45,"./AsyncUtils":46,"./createLocation":53,"./deprecate":54,"./parsePath":56,"./runTransitionHook":57,"deep-equal":42}],53:[function(require,module,exports){
+},{"./Actions":46,"./AsyncUtils":47,"./createLocation":54,"./deprecate":55,"./parsePath":57,"./runTransitionHook":58,"deep-equal":43}],54:[function(require,module,exports){
 //import warning from 'warning'
 'use strict';
 
@@ -4199,7 +4579,7 @@ function createLocation() {
 
 exports['default'] = createLocation;
 module.exports = exports['default'];
-},{"./Actions":45,"./parsePath":56}],54:[function(require,module,exports){
+},{"./Actions":46,"./parsePath":57}],55:[function(require,module,exports){
 //import warning from 'warning'
 
 "use strict";
@@ -4215,7 +4595,7 @@ function deprecate(fn) {
 
 exports["default"] = deprecate;
 module.exports = exports["default"];
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -4229,7 +4609,7 @@ function extractPath(string) {
 
 exports["default"] = extractPath;
 module.exports = exports["default"];
-},{}],56:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -4277,7 +4657,7 @@ exports['default'] = parsePath;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./extractPath":55,"_process":59,"warning":72}],57:[function(require,module,exports){
+},{"./extractPath":56,"_process":60,"warning":73}],58:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -4305,7 +4685,7 @@ exports['default'] = runTransitionHook;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"_process":59,"warning":72}],58:[function(require,module,exports){
+},{"_process":60,"warning":73}],59:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -4361,7 +4741,7 @@ module.exports = invariant;
 
 }).call(this,require('_process'))
 
-},{"_process":59}],59:[function(require,module,exports){
+},{"_process":60}],60:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -4547,7 +4927,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],60:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -4611,7 +4991,7 @@ module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
 
-},{"./lib/ReactPropTypesSecret":64,"_process":59,"fbjs/lib/invariant":66,"fbjs/lib/warning":67}],61:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":65,"_process":60,"fbjs/lib/invariant":67,"fbjs/lib/warning":68}],62:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -4671,7 +5051,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":64,"fbjs/lib/emptyFunction":65,"fbjs/lib/invariant":66}],62:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":65,"fbjs/lib/emptyFunction":66,"fbjs/lib/invariant":67}],63:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -5218,7 +5598,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 }).call(this,require('_process'))
 
-},{"./checkPropTypes":60,"./lib/ReactPropTypesSecret":64,"_process":59,"fbjs/lib/emptyFunction":65,"fbjs/lib/invariant":66,"fbjs/lib/warning":67,"object-assign":68}],63:[function(require,module,exports){
+},{"./checkPropTypes":61,"./lib/ReactPropTypesSecret":65,"_process":60,"fbjs/lib/emptyFunction":66,"fbjs/lib/invariant":67,"fbjs/lib/warning":68,"object-assign":69}],64:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -5251,7 +5631,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 }).call(this,require('_process'))
 
-},{"./factoryWithThrowingShims":61,"./factoryWithTypeCheckers":62,"_process":59}],64:[function(require,module,exports){
+},{"./factoryWithThrowingShims":62,"./factoryWithTypeCheckers":63,"_process":60}],65:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -5265,7 +5645,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],65:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 "use strict";
 
 /**
@@ -5302,7 +5682,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],66:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -5359,7 +5739,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 }).call(this,require('_process'))
 
-},{"_process":59}],67:[function(require,module,exports){
+},{"_process":60}],68:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -5425,7 +5805,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 }).call(this,require('_process'))
 
-},{"./emptyFunction":65,"_process":59}],68:[function(require,module,exports){
+},{"./emptyFunction":66,"_process":60}],69:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -5517,7 +5897,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],69:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -5790,7 +6170,7 @@ exports.default = TransitionGroup;
 module.exports = exports['default'];
 }).call(this,require('_process'))
 
-},{"./utils/ChildMapping":71,"_process":59,"chain-function":41,"prop-types":63,"react":"react","warning":70}],70:[function(require,module,exports){
+},{"./utils/ChildMapping":72,"_process":60,"chain-function":42,"prop-types":64,"react":"react","warning":71}],71:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -5855,7 +6235,7 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":59}],71:[function(require,module,exports){
+},{"_process":60}],72:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -5947,7 +6327,7 @@ function mergeChildMappings(prev, next) {
 
   return childMapping;
 }
-},{"react":"react"}],72:[function(require,module,exports){
+},{"react":"react"}],73:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -6012,6 +6392,6 @@ module.exports = warning;
 
 }).call(this,require('_process'))
 
-},{"_process":59}]},{},[31])
+},{"_process":60}]},{},[32])
 
 //# sourceMappingURL=bundle.js.map

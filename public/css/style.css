@@ -343,7 +343,7 @@ ul {
 }
 .ns-block .ns-title {
   font-size: 16px;
-  border-left: 5px solid #3b3f51;
+  border-left: 30px solid #3b3f51;
   padding-left: 30px;
   color: #000;
   line-height: 30px;
@@ -351,6 +351,22 @@ ul {
 .ns-block .ns-content {
   color: #aaa;
   margin-top: 20px;
+}
+.ns-block ul {
+  margin-top: 15px;
+}
+.ns-block .services-list a {
+  display: block;
+  line-height: 40px;
+  text-align: left;
+  padding-left: 50px;
+  margin-bottom: 3px;
+  border-left: 3px solid #eee;
+}
+.ns-block .services-list a:hover {
+  background-color: #eee;
+  color: #3ab344;
+  border-left: 3px solid #4ab344;
 }
 /*resource*/
 .resource {
@@ -428,4 +444,18 @@ ul {
 }
 .devices-list .right .devices .dev-content {
   margin-top: 20px;
+}
+.top {
+  border: 1px solid #eee;
+  position: fixed;
+  bottom: 250px;
+  background-color: #f4f8fa;
+  color: #4ab344;
+  right: 20px;
+  width: 40px;
+  padding: 15px 10px;
+}
+.top:hover {
+  cursor: pointer;
+  background-color: #ddd;
 }

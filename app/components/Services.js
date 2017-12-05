@@ -15,7 +15,7 @@ class Service extends React.Component {
 
 	componentDidMount() {
 		ServiceStore.listen(this.onChange);
-		ServiceAction.getDefaultMessage();
+		// ServiceAction.getDefaultMessage();
 		// ServiceAction.setMessage();
 	}
 

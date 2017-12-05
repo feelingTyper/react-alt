@@ -14,7 +14,26 @@ class Footer extends React.Component {
 
   componentDidMount() {
     FooterStore.listen(this.onChange);
-    // FooterActions.getTopCharacters();
+
+    //回到顶点功能
+    $(function() {
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+          $(".top").fadeIn(800);
+        } else {
+          $(".top").fadeOut(800);
+        }
+      });
+
+      $(".top").click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 400);
+        return false;
+      });
+    });
+
+
   }
 
   componentWillUnmount() {
@@ -47,6 +66,9 @@ class Footer extends React.Component {
           
           </div>
          
+        </div>
+        <div className="top">
+          回到顶部
         </div>
       </footer>
     );
