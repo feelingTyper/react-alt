@@ -7,9 +7,10 @@ class IntentionDetail extends React.Component {
 
     render() {
         return (
+            <div style={{borderTop:'1px solid #ddd', marginTop:'-20px', paddingTop: '50px'}}>
             <div className="container intention-detail">
                 <div className="legend">平台建设详细目标</div>
-                <div className="topo clearfix">
+                <div className="topo clearfix" style={{marginBottom: '50px'}}>
                     <img src="/img/topology.jpg" alt=""/>
                     <div className="topo-des">
                         <h5 style={{marginBottom:'20px', fontWeight:'bold'}}>网络拓扑功能详解：</h5>
@@ -19,21 +20,22 @@ class IntentionDetail extends React.Component {
                         <p>多源多层次数据：网络流量数据、审计数据、网络设备日志、安全设备日志、设备性能等</p>
                     </div>
                 </div>
-                <div className="research clearfix" style={{marginTop: '50px', marginBottom:'50px'}}>
+                <div className="research clearfix" >
                     <div className="legend">研究内容</div>
-                    <div>
-                        <p>1、网络多源多层次数据采集及预处理；   4、网络攻击智能预警及防御技术；
-2、日志异常检测与筛选技术；                    5、可视化技术。
-3、关键节点/网络的安全评估方法；
-</p>
+                    <div className="row" style={{marginTop: '40px'}}>
+                        <div className="col-xs-4"><p><em>1</em>网络多源多层次数据采集及预处理</p></div>
+                        <div className="col-xs-4"><p><em>2</em>日志异常检测与筛选技术</p></div>
+                        <div className="col-xs-4"><p><em>3</em>关键节点/网络的安全评估方法</p></div>
+                        <div className="col-xs-4"><p><em>4</em>网络攻击智能预警及防御技术</p></div>
+                        <div className="col-xs-4"><p><em>5</em>可视化技术</p></div>
                     </div>
                 </div>
 
-                <div className="intention">
-                    <div className="legend">
+                <div className="intention" style={{marginBottom: '50px'}}>
+                    <div className="legend" style={{marginBottom: '50px'}}>
                         研究目标
                     </div>
-                    <table className="table table-striped">
+                    <table className="table table-striped table-bordered" id="intention">
                         <thead>
                             <tr>
                                 <th>需求</th>
@@ -99,6 +101,7 @@ class IntentionDetail extends React.Component {
                         </tbody>
                     </table>
                 </div>
+            </div>
             </div>
         );
     }
