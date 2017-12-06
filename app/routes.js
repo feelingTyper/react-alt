@@ -11,6 +11,7 @@ import Team from './components/Team';
 import Project from './components/Project';
 import DevicesList from './components/DevicesList';
 import ServicesList from './components/ServicesList';
+import IntentionDetail from './components/IntentionDetail';
 
 export default (
   <Route component={App}>
@@ -22,5 +23,6 @@ export default (
     <Route path='/projects' component={Project} />
     <Route path='/devicesList' component={DevicesList} />
     <Route path='/services/detail/:name' component={ServicesList} />
+    <Route path='/intention' component={IntentionDetail} />
   </Route>
 );

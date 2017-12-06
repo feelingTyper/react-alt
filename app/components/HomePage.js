@@ -35,7 +35,7 @@ class HomePage extends React.Component {
                     <div className="be-title">{this.state.title}</div>
                     <div className="be-content">{this.state.content}</div>
                 </div>
-                <div className="home-intention"  style={{padding: '50px 0', backgroundColor: '#e0e0e0'}} ><Intention /></div>
+                <div className="home-intention"  style={{padding: '50px 0', backgroundColor: '#eaeaea'}} ><Intention /></div>
                 <div className="home-topology" style={{backgroundColor: '#fff', padding:'50px 0'}}><Topology /></div>
                 <div className="home-device" style={{backgroundColor:'#f0f3f4', padding: '50px 0'}}><Device /></div>
                 <div className="home-news" style={{backgroundColor:'#fff', padding:'50px 0'}}><News /></div>

@@ -15,7 +15,7 @@ class Intention extends React.Component {
         }, {
             img: '/img/bigdata.png',
             subTitle: '大数据分析',
-            content: 'hadoop分布式数据存储计算平台，海量数据融合分析处理'
+            content: '分布式数据存储计算平台，海量数据融合分析处理'
 
         }, {
             img: '/img/cloud.png',
@@ -36,10 +36,10 @@ class Intention extends React.Component {
         })
         return (
             <div className="intent">
-                <HomeModuleTitle title= {{cn: '目标', en: '——  SERVICE  ——'}} />
+                <HomeModuleTitle title= {{cn: '目标', en: '——  INTENTION  ——'}} />
                 <div className="intent-content container">
                     <div className="row clearfix">
-                    {contentList}
+                    <a href="/intention">{contentList}</a>
                     </div>
                 </div>
             </div>

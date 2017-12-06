@@ -17,8 +17,18 @@ class Footer extends React.Component {
 
     //回到顶点功能
     $(function() {
+      if ($(window).scrollTop() > 400) {
+        $('.top').css({
+          display: 'block'
+        });
+      } else {
+        $('.top').css({
+          display: 'none'
+        });
+      }
+
       $(window).scroll(function() {
-        if ($(window).scrollTop() > 100) {
+        if ($(window).scrollTop() > 400) {
           $(".top").fadeIn(800);
         } else {
           $(".top").fadeOut(800);

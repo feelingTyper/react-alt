@@ -28,14 +28,15 @@ class Team extends React.Component {
             category: '老师',
             names: [{
                 name: '王健',
-                link: '',
-                detail: '讲师，研究方向量子密码'
+                link: 'http://youngyu.net/',
+                detail: '讲师，研究方向量子密码',
+                img: ''
             }]
         }, {
             category: '博士',
             names: [{
                 name: '韩磊',
-                link: '',
+                link: 'http://youngyu.net/',
                 detail: '博士，研究方向，态势感知',
                 img: ''
             }]
@@ -43,22 +44,22 @@ class Team extends React.Component {
             category: '硕士',
             names: [{
                 name: '于洋',
-                link: '',
+                link: 'http://youngyu.net/',
                 detail: '研二，研究方向：态势感知',
                 img: ''
             }, {
                 name: '吕少华',
-                link: '',
+                link: 'http://youngyu.net/',
                 detail: '研二，研究方向，态势感知',
                 img: ''
             }, {
-                name: '',
-                link: '',
+                name: '和旭东',
+                link: 'http://youngyu.net/',
                 detail: '研二，研究方向，态势感知'
 
             }, {
                 name: '杨茵淇',
-                link: '',
+                link: 'http://youngyu.net/',
                 detail: '研一，研究方向，态势感知',
                 img: ''
             }, ]
@@ -73,19 +74,20 @@ class Team extends React.Component {
         let teamList = teams.map((team, index) => {
             let nameList = team.names.map((obj, index) => {
                 return (
-                    <div className=" col-xs-offset-1 col-xs-1" key={index}>
-                        <a href="#">
-                            <img style={{width: '100px', height: '100px'}} src="img/u18.png" />
-                            <div className="name">{obj.name}</div>
+                    <div className="col-xs-4" key={index} style={{textAlign:'center', marginBottom:'40px'}}>
+                        <a href={obj.link} target="_blank">
+                            <img style={{width: '100px', height: '100px'}} src={obj.img||'/img/bjtu.jpeg'} />
+                            <div className="name" style={{marginTop: '20px', color: '#4ab344'}}>{obj.name}</div>
                         </a>
+                            <div className="info" style={{marginTop: '20px'}}><strong>简介：</strong>&nbsp;&nbsp;{obj.detail}</div>
                     </div>
                 );
             });
 
             return (
                 <div className="onepeo_outline clearfix col-xs-12" key={index}>
-                    <div className="col-xs-1 oneclassName">{team.category}</div>
-                    <div className="col-xs-10">
+                    <div className="col-xs-1" style={{borderRight:'1px solid #ddd', textAlign: 'center'}}><strong>{team.category}</strong></div>
+                    <div className="col-xs-11 row">
                         {nameList}
                     </div>
                 </div>
@@ -94,7 +96,7 @@ class Team extends React.Component {
 
         return (
             <div className="team">
-                <div className="outline row clearfix" style={{backgroundColor: '#f0f4f5'}}>
+                <div className="outline clearfix" style={{backgroundColor: '#f0f4f5'}}>
                     <div className="container">
                         <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR GROUP'}} /></div>
                         <div className="row" style={{marginBottom: '50px'}}>
