@@ -256,11 +256,11 @@ ul {
   margin: 100px 0;
 }
 .project .titon {
-  font-family: Microsoft YaHei;
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: bold;
   text-align: center;
   padding: 30px 0;
-  border-bottom: 1px solid #5e8594;
+  border-bottom: 1px solid #ddd;
   margin: 0 20px 30px 20px;
 }
 .project .titfin {
@@ -279,44 +279,48 @@ ul {
   background: url(../img/3.jpg);
 }
 .project ul.sis-li li .v1 {
-  float: left;
-  width: 320px;
+  width: 100%;
   position: relative;
   height: 250px;
   color: #7F7F7F;
 }
-.project ul.sis-li li .v1 img {
-  width: 320px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 5;
-  height: 250px;
-}
-.project ul.sis-li li .v1 .div {
-  width: 320px;
+.project ul.sis-li li .v1 .div1 {
+  display: block;
+  width: 100%;
   position: absolute;
   z-index: 10;
-  background: #FFF;
-  FILTER: alpha(opacity=60);
-  opacity: 0.7;
-  -moz-opacity: 0.7;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
   height: 250px;
-  float: left;
   text-align: left;
-  /*top: 8px;*/
   padding: 15px 12px 0 12px;
 }
-.project ul.sis-li li .v1 .div .txt {
+.project ul.sis-li li .v1 .div1 .txt {
   line-height: 18px;
   height: 80px;
   display: block;
-  color: #000;
+  color: #fff;
   overflow: hidden;
 }
 .project ul.sis-li li:hover .v1 {
   color: #7F7F7F;
   text-decoration: none;
+}
+.project .project-title {
+  text-align: center;
+  margin-top: 20px;
+}
+.project .project-title a {
+  color: #4ab344;
+}
+.project .doing {
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 250px;
+  background-color: #3b3f51;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 .pic-common {
   height: 300px;
@@ -448,7 +452,7 @@ ul {
 .top {
   border: 1px solid #eee;
   position: fixed;
-  bottom: 250px;
+  bottom: 100px;
   background-color: #f4f8fa;
   color: #4ab344;
   right: 20px;
@@ -458,4 +462,9 @@ ul {
 .top:hover {
   cursor: pointer;
   background-color: #ddd;
+}
+.lead {
+  text-align: center;
+  line-height: 110px;
+  margin: 0;
 }

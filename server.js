@@ -27,11 +27,10 @@ var app = express();
 
 var options = {
   useMongoClient: true,
-  autoIndex: false, // Don't build indexes
-  reconnectTries: Number.MAX_VALUE, // Never stop trying to reconnect
-  reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
-  // If not connected, return errors immediately rather than waiting for reconnect
+  autoIndex: false,
+  reconnectTries: Number.MAX_VALUE,
+  reconnectInterval: 500,
+  poolSize: 10,
   bufferMaxEntries: 0
 };
 
@@ -75,7 +74,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+app.use(favicon(path.join(__dirname, 'public', 'icon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -84,8 +83,6 @@ app.use(express.static(path.join(__dirname, 'public')));
  * 
  */
 app.use('/api', services);
-// app.use('/', character);
-
 
 
 app.use(function(req, res) {

@@ -942,39 +942,53 @@ var Footer = function (_React$Component) {
               { className: 'row clearfix' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-sm-12' },
+                { className: 'col-xs-6', style: { lineHeight: '110px', paddingLeft: '50px' } },
+                _react2.default.createElement('img', { src: '/img/footer_logo.png', alt: '' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-xs-6' },
                 _react2.default.createElement(
-                  'h3',
+                  'h2',
                   { className: 'lead' },
                   _react2.default.createElement(
                     'strong',
                     null,
                     '\u667A\u80FD\u5316\u7F51\u7EDC\u4FE1\u606F\u5B89\u5168\u5B9E\u9A8C\u5E73\u53F0'
                   )
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  '\u8054\u7CFB\u5730\u5740:\xA0\xA0\xA0\u5317\u4EAC\u5E02\u6D77\u6DC0\u533A\u4E0A\u5143\u67513\u53F7\u9662\u5317\u4EAC\u4EA4\u901A\u5927\u5B66\xA0\xA0\xA0\u4E5D\u6559\u5317304'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  '\u8054\u7CFB\u7535\u8BDD:\xA0\xA0\xA051684609'
                 )
               )
             ),
             _react2.default.createElement('div', { className: 'divider' }),
             _react2.default.createElement(
               'div',
-              { className: 'row' },
+              { className: 'row clearfix' },
               _react2.default.createElement(
                 'div',
-                { className: 'col-sm-12', style: { paddingTop: '50px' } },
+                { className: 'col-xs-6', style: { paddingTop: '30px' } },
                 _react2.default.createElement(
                   'p',
                   null,
-                  '\xA92017-BJTU'
+                  '\u8054\u7CFB\u5730\u5740:\xA0\xA0\xA0\u5317\u4EAC\u5E02\u6D77\u6DC0\u533A\u4E0A\u56ED\u67513\u53F7\u9662\u5317\u4EAC\u4EA4\u901A\u5927\u5B66\xA0\xA0\xA0\u4E5D\u6559\u5317304'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  '\u8054\u7CFB\u7535\u8BDD:\xA0\xA0\xA051684609'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-xs-6', style: { paddingTop: '30px', paddingBottom: '30px', textAlign: 'center' } },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  '\xA92017\xA0\xA0\xA0\u5317\u4EAC\u4EA4\u901A\u5927\u5B66\u8F68\u9053\u4EA4\u901A\u9690\u79C1\u4FDD\u62A4\u5317\u4EAC\u5E02\u91CD\u70B9\u5B9E\u9A8C\u5BA4\u7248\u6743\u6240\u6709'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  '\u4EAC\u516C\u7F51\u5B89\u5907\uFF1A\xA0\xA0110402430059 \u4EACICP\u590712010520\u53F7-2'
                 )
               )
             )
@@ -1765,9 +1779,9 @@ var Project = function (_React$Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             $(document).ready(function () {
-                $("span.div").hide();
+                $("span.div1").hide();
                 $(".sis-li li").hover(function () {
-                    $("span.div", this).slideToggle(500);
+                    $("span.div1", this).stop().slideToggle(500);
                 });
             });
 
@@ -1788,73 +1802,123 @@ var Project = function (_React$Component) {
         value: function render() {
 
             var projects = [{
-                title: '在研项目',
-                projects: [{
-                    img: '/img/1.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
-                }, {
-                    img: '/img/2.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
-                }, {
-                    img: '/img/3.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
-                }]
-            }, {
                 title: '完结项目',
                 projects: [{
                     img: '/img/1.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
+                    info: '资源共享平台',
+                    title: '资源共享平台',
+                    url: 'http://192.168.10.200'
                 }, {
                     img: '/img/2.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
+                    info: '众创云平台',
+                    title: '众创云平台',
+                    url: 'http://192.168.10.100:8080'
                 }, {
                     img: '/img/3.jpg',
-                    info: '文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明文字说明'
+                    info: '智能化网络信息安全实验平台',
+                    title: '智能化网络信息安全实验平台',
+                    url: '/'
+                }, {
+                    img: '/img/3.jpg',
+                    info: '移动网络应用审计平台',
+                    title: '移动网络应用审计平台',
+                    url: ''
+                }, {
+                    img: '/img/3.jpg',
+                    info: '实验平台',
+                    title: '实验平台',
+                    url: ''
+                }]
+            }, {
+                title: '在研项目',
+                projects: [{
+                    img: '/img/1.jpg',
+                    info: '',
+                    title: '轻量级秘钥管理关键技术研究'
+                }, {
+                    img: '/img/2.jpg',
+                    info: '大连接安全方案研究（认证与数据加密）',
+                    title: '面向多域互联网的态势感知关键技术研究',
+                    url: ''
+                }, {
+                    img: '/img/2.jpg',
+                    info: '\u6F0F\u6D1E\u6316\u6398\u4E0E\u9A8C\u8BC1\uFF1A\u5206\u522B\u5206\u6790\u4E91\u7AEF\u3001APP\u548C\u7269\u8054\u7F51\u8BBE\u5907\u4E09\u7AEF\u5404\u81EA\u5B58\u5728\u7684\u9759\u6001\u7F3A\u9677\uFF1B\n                \u901A\u8FC7\u6D41\u91CF\u6570\u636E\u548C\u4E09\u7AEF\u8054\u5408\u5206\u6790\u7684\u65B9\u5F0F,\u5206\u6790\u51FA\u4E09\u7AEF\u7ED3\u5408\u5B58\u5728\u7684\u4E0D\u8DB3\uFF1B\u53D1\u73B0\u4E91\u7AEF\u548C\u7269\u8054\u7F51\u8BBE\n                \u5907\u9762\u4E34\u7684\u6DF1\u5C42\u6B21\u5B89\u5168\u98CE\u9669\uFF0C\u5E76\u9A8C\u8BC1\u6F0F\u6D1E\u7684\u98CE\u9669\u548C\u53EF\u5229\u7528\u6027',
+                    title: '5G移动大连接技术方案与实验系统研发',
+                    url: ''
+
+                }, {
+                    img: '/img/2.jpg',
+                    info: '',
+                    title: '智能物联设备安全研究与验证实现',
+                    url: ''
+                }, {
+                    img: '/img/2.jpg',
+                    info: '',
+                    title: '面向多域互联网的态势感知关键技术研究',
+                    url: ''
                 }]
             }];
 
             var projectList = projects.map(function (project, index) {
+                var doing = project.title == '完结项目' ? false : true;
+
                 var blockList = project.projects.map(function (pro, index) {
                     var imgstyle = {
                         height: '250px',
-                        width: '320px',
                         overflow: 'hidden',
                         background: 'url(' + pro.img + ')',
                         backgroundSize: 'cover'
                     };
 
-                    return _react2.default.createElement(
-                        'li',
-                        { className: 'col-xs-4', key: index },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'v1' },
+                    if (pro.url) {
+                        var link = '<a href="' + pro.url + '" target="_blank">' + pro.title + '</a>';
+                    } else {
+                        var link = pro.title;
+                    }
+
+                    if (!doing) {
+
+                        return _react2.default.createElement(
+                            'li',
+                            { className: 'col-xs-4', key: index, style: { marginBottom: '40px' } },
                             _react2.default.createElement(
-                                'a',
-                                { href: '#' },
+                                'div',
+                                { className: 'v1' },
                                 _react2.default.createElement(
-                                    'div',
-                                    { syle: imgstyle },
-                                    _react2.default.createElement('img', { style: { height: 'auto', width: '320px' }, src: pro.img })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'div' },
-                                _react2.default.createElement(
-                                    'h3',
-                                    null,
-                                    ' \u4FE1\u606F\u7B80\u4ECB\uFF1A'
+                                    'a',
+                                    { href: '#' },
+                                    _react2.default.createElement('div', { style: imgstyle })
                                 ),
                                 _react2.default.createElement(
                                     'span',
-                                    { className: 'txt' },
-                                    pro.info
+                                    { className: 'div1' },
+                                    _react2.default.createElement(
+                                        'h3',
+                                        { style: { color: '#fff' } },
+                                        ' \u4FE1\u606F\u7B80\u4ECB\uFF1A'
+                                    ),
+                                    _react2.default.createElement(
+                                        'span',
+                                        { className: 'txt' },
+                                        pro.info
+                                    )
                                 )
+                            ),
+                            _react2.default.createElement('div', { className: 'project-title', dangerouslySetInnerHTML: { __html: link } })
+                        );
+                    } else {
+                        return _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-4' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'doing' },
+                                pro.title
                             )
-                        )
-                    );
+                        );
+                    }
                 });
+
                 return _react2.default.createElement(
                     'div',
                     { className: 'outline clearfix', key: index },
@@ -1879,7 +1943,7 @@ var Project = function (_React$Component) {
                     { className: 'container' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'row' },
+                        { className: 'row clearfix' },
                         projectList
                     )
                 )
@@ -2795,34 +2859,63 @@ var Team = function (_React$Component) {
 
             var teams = [{
                 category: '老师',
-                names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+                names: [{
+                    name: '王健',
+                    link: '',
+                    detail: '讲师，研究方向量子密码'
+                }]
             }, {
                 category: '博士',
-                names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+                names: [{
+                    name: '韩磊',
+                    link: '',
+                    detail: '博士，研究方向，态势感知',
+                    img: ''
+                }]
             }, {
                 category: '硕士',
-                names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+                names: [{
+                    name: '于洋',
+                    link: '',
+                    detail: '研二，研究方向：态势感知',
+                    img: ''
+                }, {
+                    name: '吕少华',
+                    link: '',
+                    detail: '研二，研究方向，态势感知',
+                    img: ''
+                }, {
+                    name: '',
+                    link: '',
+                    detail: '研二，研究方向，态势感知'
+
+                }, {
+                    name: '杨茵淇',
+                    link: '',
+                    detail: '研一，研究方向，态势感知',
+                    img: ''
+                }]
             }, {
                 category: '本科生',
-                names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+                names: []
             }, {
                 category: '毕业生',
-                names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+                names: []
             }];
 
             var teamList = teams.map(function (team, index) {
-                var nameList = team.names.map(function (name, index) {
+                var nameList = team.names.map(function (obj, index) {
                     return _react2.default.createElement(
                         'div',
-                        { className: ' col-xs-offset-1 col-md-1', key: index },
+                        { className: ' col-xs-offset-1 col-xs-1', key: index },
                         _react2.default.createElement(
                             'a',
                             { href: '#' },
-                            _react2.default.createElement('img', { src: 'img/u18.png' }),
+                            _react2.default.createElement('img', { style: { width: '100px', height: '100px' }, src: 'img/u18.png' }),
                             _react2.default.createElement(
                                 'div',
                                 { className: 'name' },
-                                name
+                                obj.name
                             )
                         )
                     );
@@ -2856,7 +2949,7 @@ var Team = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { style: { marginTop: '50px' } },
-                            _react2.default.createElement(_HomeModuleTitle2.default, { title: { cn: '我们的团队', en: 'OUR TEAM' } })
+                            _react2.default.createElement(_HomeModuleTitle2.default, { title: { cn: '我们的团队', en: 'OUR GROUP' } })
                         ),
                         _react2.default.createElement(
                             'div',

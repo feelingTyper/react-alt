@@ -26,28 +26,57 @@ class Team extends React.Component {
 
         let teams = [{
             category: '老师',
-            names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+            names: [{
+                name: '王健',
+                link: '',
+                detail: '讲师，研究方向量子密码'
+            }]
         }, {
             category: '博士',
-            names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+            names: [{
+                name: '韩磊',
+                link: '',
+                detail: '博士，研究方向，态势感知',
+                img: ''
+            }]
         }, {
             category: '硕士',
-            names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+            names: [{
+                name: '于洋',
+                link: '',
+                detail: '研二，研究方向：态势感知',
+                img: ''
+            }, {
+                name: '吕少华',
+                link: '',
+                detail: '研二，研究方向，态势感知',
+                img: ''
+            }, {
+                name: '',
+                link: '',
+                detail: '研二，研究方向，态势感知'
+
+            }, {
+                name: '杨茵淇',
+                link: '',
+                detail: '研一，研究方向，态势感知',
+                img: ''
+            }, ]
         }, {
             category: '本科生',
-            names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+            names: []
         }, {
             category: '毕业生',
-            names: ['xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx', 'xxx']
+            names: []
         }];
 
         let teamList = teams.map((team, index) => {
-            let nameList = team.names.map((name, index) => {
+            let nameList = team.names.map((obj, index) => {
                 return (
-                    <div className=" col-xs-offset-1 col-md-1" key={index}>
+                    <div className=" col-xs-offset-1 col-xs-1" key={index}>
                         <a href="#">
-                            <img src="img/u18.png" />
-                            <div className="name">{name}</div>
+                            <img style={{width: '100px', height: '100px'}} src="img/u18.png" />
+                            <div className="name">{obj.name}</div>
                         </a>
                     </div>
                 );
@@ -67,7 +96,7 @@ class Team extends React.Component {
             <div className="team">
                 <div className="outline row clearfix" style={{backgroundColor: '#f0f4f5'}}>
                     <div className="container">
-                        <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR TEAM'}} /></div>
+                        <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR GROUP'}} /></div>
                         <div className="row" style={{marginBottom: '50px'}}>
                             <div className="col-md-7">
                                 <img className="img-responsive" src="img/1.jpg" />
