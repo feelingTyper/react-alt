@@ -72,15 +72,15 @@ class DevicesList extends React.Component {
             },
             detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
         }, {
-            name: '天融信防火墙',
+            name: '天融信NGFW防火墙（NGFW4000-UF）',
             pic: '/img/ruijie_sw_1.png',
             outline: {
-                name: '天融信防火墙',
+                name: '天融信NGFW防火墙（NGFW4000-UF）',
                 version: 'RG-1600i',
                 date: '2017-3-3',
                 corporation: '锐捷'
             },
-            detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+            detail: 'NGFW ® 下一代防火墙是天融信公司凭借多年以来积累的安全产品研发与部署经验，为适应各个行业不同的网络应用环境，以及满足各类用户差异化的安全防护需求，设计并研发的多业务高性能防火墙产品。'
         }, {
             name: '天融信入侵检测系统',
             pic: '/img/ruijie_sw_1.png',

@@ -401,7 +401,10 @@ ul {
   border-bottom: 1px solid #f0f3f5;
 }
 .resource .resource-des .des-block .paper-item a {
-  color: #ffc001;
+  color: #4ab344;
+}
+.resource .resource-des .des-block .paper-item:hover {
+  background-color: #efefef;
 }
 .devices-list .dev-list {
   color: #fff;
