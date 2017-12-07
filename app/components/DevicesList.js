@@ -88,35 +88,35 @@ class DevicesList extends React.Component {
             detail: `划分vlan，在本网络结构中上连锐捷防火墙，下连天镜漏洞扫描，存储服务器，是采集汇集域的接入交换机。`
         }, {
             name: '启明星辰天镜漏洞扫描',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/tianjing.png',
             outline: {
                 name: '启明星辰天镜漏洞扫描',
-                version: 'RG-1600i',
+                version: 'windows7',
                 date: '2017-3-3',
-                corporation: '锐捷'
+                corporation: '启明星辰'
             },
             detail: `用户管理，用户审计，任务管理，策略管理，扫描功能，资产管理，报表快速查看，
             报表管理，报告导出，升级功能，检测工具，第三方接口，漏洞验证`
         }, {
             name: '天融信防火墙',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/tianrongxin.png',
             outline: {
-                name: '天融信NGFW防火墙（NGFW4000-UF）',
-                version: 'RG-1600i',
+                name: '天融信NGFW防火墙',
+                version: 'NGFW4000-UF',
                 date: '2017-3-3',
-                corporation: '锐捷'
+                corporation: '天融信'
             },
             detail: `NGFW ® 下一代防火墙是天融信公司凭借多年以来积累的安全产品研发与部署经验，
             为适应各个行业不同的网络应用环境，以及满足各类用户差异化的安全防护需求，设计并研发
             的多业务高性能防火墙产品。`
         }, {
             name: '天融信入侵检测系统',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/tianrongxin_ids.jpg',
             outline: {
                 name: '天融信入侵检测（IDS）TopSentry',
-                version: 'RG-1600i',
+                version: 'TopSentry',
                 date: '2017-3-3',
-                corp: '锐捷'
+                corp: '天融信'
             },
             detail: `天融信公司自主研发的入侵检测系统（以下简称TopSentry产品）采用旁路部署方式，
             能够实时检测包括溢出攻击、RPC攻击、WebCGI攻击、拒绝服务攻击、木马、蠕虫、系统漏洞等超
@@ -127,9 +127,9 @@ class DevicesList extends React.Component {
             pic: '/img/ruijie_sw_1.png',
             outline: {
                 name: '天融信入侵防御（IPS）TopIDP',
-                version: 'RG-1600i',
+                version: 'TopIDP',
                 date: '2017-3-3',
-                corp: '锐捷'
+                corp: '天融信'
             },
             detail: `天融信公司自主研发的入侵防御系统（以下简称TopIDP产品）采用在线部署方式，
             能够实时检测和阻断包括溢出攻击、RPC攻击、WebCGI攻击、拒绝服务攻击、木马、蠕虫、系
@@ -138,22 +138,22 @@ class DevicesList extends React.Component {
             用户提供了完整的立体式网络安全防护。`
         }, {
             name: '天融信网闸',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/wangzha.jpeg',
             outline: {
                 name: '天融信网闸TopRules8000',
                 version: 'TopRules8000',
                 date: '2017-3-3',
-                corp: '锐捷'
+                corp: '天融信'
             },
             detail: `天融信安全隔离与信息交换系统TopRules是北京天融信公司基于公司自主知识产权的安全操作
             系统TOS (Topsec Operating System) 和多年网络安全产品研发经验研发而成的，该系统采用“2+1”系
             统架构，通过对信息进行落地、还原、扫描、过滤、防病毒、入侵检测、审计等一系列安全处理机制，有效
             防止黑客攻击、恶意代码和病毒渗入，同时防止内部机密信息泄露，实现网间安全隔离和信息交换。`
         }, {
-            name: 'HP服务器：',
-            pic: '/img/ruijie_sw_1.png',
+            name: '惠普服务器：',
+            pic: '/img/hp.png',
             outline: {
-                name: 'HP服务器：',
+                name: '惠普服务器：',
                 version: '',
                 date: '2017-3-3',
                 corp: '惠普'
@@ -161,7 +161,7 @@ class DevicesList extends React.Component {
             detail: `做了虚拟化，并在虚拟化的基础上搭建了DMZ域的各类服务。`
         }, {
             name: 'IBM服务器：',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/ibm.jpeg',
             outline: {
                 name: 'IBM服务器：',
                 version: '',
@@ -171,7 +171,7 @@ class DevicesList extends React.Component {
             detail: `上连锐捷防火墙，作为分析域，预设各类分析平台，包括tensorflow，weka等。`
         }, {
             name: 'NAS磁盘柜',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/qnap.jpeg',
             outline: {
                 name: 'NAS磁盘柜',
                 version: 'QNAP TS-653A',
@@ -181,7 +181,7 @@ class DevicesList extends React.Component {
             detail: `上连CISCO路由器，作为内部用户存储使用，可连接无线接入。`
         }, {
             name: 'CISCO路由器',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/cisco_router.jpg',
             outline: {
                 name: 'NAS磁盘柜',
                 version: 'QNAP TS-653A',
