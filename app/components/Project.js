@@ -34,27 +34,27 @@ class Project extends React.Component {
         let projects = [{
             title: '完结项目',
             projects: [{
-                img: '/img/1.jpg',
+                img: '/img/xiaodou.jpg',
                 info: '资源共享平台',
                 title: '资源共享平台',
                 url: 'http://192.168.10.200'
             }, {
-                img: '/img/2.jpg',
+                img: '/img/zhongchuang.jpg',
                 info: '众创云平台',
                 title: '众创云平台',
                 url: 'http://192.168.10.100:8080'
             }, {
-                img: '/img/3.jpg',
+                img: '/img/pingtai.png',
                 info: '智能化网络信息安全实验平台',
                 title: '智能化网络信息安全实验平台',
                 url: '/'
             }, {
-                img: '/img/3.jpg',
+                img: '/img/pingtai.png',
                 info: '移动网络应用审计平台',
                 title: '移动网络应用审计平台',
                 url: ''
             }, {
-                img: '/img/3.jpg',
+                img: '/img/pingtai.png',
                 info: '实验平台',
                 title: '实验平台',
                 url: ''

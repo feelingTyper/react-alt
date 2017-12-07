@@ -638,6 +638,7 @@ var DevicesList = function (_React$Component) {
         value: function componentDidMount() {
             _DevicesListStores2.default.listen(this.onChange);
             var _top = $('.dev-list').offset().top;
+            console.log(_top);
             $(document).scroll(function () {
                 if ($(document).scrollTop() > 300) {
                     $('.dev-list').css({
@@ -645,7 +646,7 @@ var DevicesList = function (_React$Component) {
                     });
                 } else {
                     $('.dev-list').css({
-                        top: _top
+                        top: 236
                     });
                 }
             });
@@ -682,38 +683,36 @@ var DevicesList = function (_React$Component) {
                 outline: {
                     name: '锐捷交换机',
                     version: 'RG-1600i',
-                    date: '2017-3-3',
                     corporation: '锐捷'
                 },
                 detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4E0B\u8FDE\u53F0\u5F0F\u670D\u52A1\u5668\uFF0C\u5305\u542B\u5185\u90E8\u7528\u6237\u533A\u57DF\uFF0C\u5305\u62EC\u4E00\u4E9B\u9776\u673A,s\n            nort\u670D\u52A1\u4E3B\u673A\u3002\u662F\u7528\u6237\u57DF\u7684\u63A5\u5165\u4EA4\u6362\u673A\u3002'
             }, {
                 name: '锐捷防火墙',
-                pic: '/img/ruijie_sw_1.png',
+                pic: '/img/ruijie_firewall.jpg',
                 outline: {
                     name: '锐捷防火墙',
                     version: 'RG-WALL1600-SI',
-                    date: '2017-3-3',
                     corporation: '锐捷'
                 },
                 detail: '\u9510\u6377 RG-WALL 1600-si\u662F\u9510\u6377\u7F51\u7EDC\u63A8\u51FA\u7684\u4E1A\u5185\u96C6\u5B89\u5168\u3001\u8DEF\u7531\u3001\u4EA4\u6362\u4E8E\u4E00\u4F53\u7684\u9632\u706B\u5899\u4EA7\u54C1\uFF0C\n            \u5177\u6709\u63A5\u53E3\u4E30\u5BCC\u3001\u914D\u7F6E\u7075\u6D3B\u7684\u7279\u70B9\u3002\u5B83\u53EF\u4EE5\u4E3A\u7528\u6237\u63D0\u4F9B\u5B8C\u6574\u7684\u7AEF\u5230\u7AEF\u89E3\u51B3\u65B9\u6848\uFF0C\u662F\u7F51\u7EDC\u51FA\u53E3\u548C\u4E0D\u540C\u7B56\u7565\u533A\n            \u57DF\u4E4B\u95F4\u5B89\u5168\u4E92\u8054\u7684\u7406\u60F3\u9009\u62E9\uFF0C\u6EE1\u8DB3\u4E2D\u5C0F\u4F01\u4E1A\u4E0D\u65AD\u53D8\u5316\u7684\u7F51\u7EDC\u73AF\u5883\u548C\u65E5\u76CA\u4E30\u5BCC\u7F51\u7EDC\u5E94\u7528\u7684\u9700\u8981\u3002\u5728\u672C\u7F51\u7EDC\n            \u7ED3\u6784\u4E2D\u5212\u5206\u4E86\u7528\u6237\u57DF\u3001\u91C7\u96C6\u6C47\u805A\u57DF\u3001\u5206\u6790\u57DF\u3001\u5185\u7F51\u7528\u6237\u63A5\u5165\u57DF\u3002'
             }, {
                 name: '思科交换机',
-                pic: '/img/ruijie_sw_1.png',
+                pic: '/img/cisco.jpeg',
                 outline: {
                     name: '思科200E系列交换机',
                     version: '200E',
                     date: '2017-3-3',
-                    corp: '锐捷'
+                    corp: '思科'
                 },
                 detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u662FDMZ\u7684\u63A5\u5165\u4EA4\u6362\u63A5\uFF0C\u5728\u4EA4\u6362\u673A\u4E0B\u8FDE\u63A5HP\u670D\u52A1\u5668\uFF0C\u642D\u5EFA\u5404\u7C7B\u670D\u52A1\uFF0C\u5305\u62ECmail\u3001\n            ftp\u3001git\u7B49'
             }, {
                 name: 'TP-LINK交换机',
-                pic: '/img/ruijie_sw_1.png',
+                pic: '/img/tplink.jpg',
                 outline: {
                     name: 'TP-LINK交换机',
                     version: '200E',
                     date: '2017-3-3',
-                    corp: '锐捷'
+                    corp: 'TP-Link'
                 },
                 detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4E0B\u8FDE\u5929\u955C\u6F0F\u6D1E\u626B\u63CF\uFF0C\u5B58\u50A8\u670D\u52A1\u5668\uFF0C\u662F\u91C7\u96C6\u6C47\u96C6\u57DF\u7684\u63A5\u5165\u4EA4\u6362\u673A\u3002'
             }, {
@@ -874,20 +873,6 @@ var DevicesList = function (_React$Component) {
                                     _react2.default.createElement(
                                         'td',
                                         null,
-                                        '\u751F\u4EA7\u65E5\u671F'
-                                    ),
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
-                                        item.outline.date
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'tr',
-                                    null,
-                                    _react2.default.createElement(
-                                        'td',
-                                        null,
                                         '\u751F\u4EA7\u516C\u53F8'
                                     ),
                                     _react2.default.createElement(
@@ -922,7 +907,7 @@ var DevicesList = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'main', style: { marginTop: '50px', backgroundColor: '#eee', paddingBottom: '200px' } },
+                    { className: 'main', style: { marginTop: '50px', backgroundColor: '#effefe', paddingBottom: '200px' } },
                     _react2.default.createElement(
                         'div',
                         { className: 'row clearfix' },
@@ -2637,27 +2622,27 @@ var Project = function (_React$Component) {
             var projects = [{
                 title: '完结项目',
                 projects: [{
-                    img: '/img/1.jpg',
+                    img: '/img/xiaodou.jpg',
                     info: '资源共享平台',
                     title: '资源共享平台',
                     url: 'http://192.168.10.200'
                 }, {
-                    img: '/img/2.jpg',
+                    img: '/img/zhongchuang.jpg',
                     info: '众创云平台',
                     title: '众创云平台',
                     url: 'http://192.168.10.100:8080'
                 }, {
-                    img: '/img/3.jpg',
+                    img: '/img/pingtai.png',
                     info: '智能化网络信息安全实验平台',
                     title: '智能化网络信息安全实验平台',
                     url: '/'
                 }, {
-                    img: '/img/3.jpg',
+                    img: '/img/pingtai.png',
                     info: '移动网络应用审计平台',
                     title: '移动网络应用审计平台',
                     url: ''
                 }, {
-                    img: '/img/3.jpg',
+                    img: '/img/pingtai.png',
                     info: '实验平台',
                     title: '实验平台',
                     url: ''
@@ -3919,9 +3904,9 @@ var Team = function (_React$Component) {
                 category: '老师',
                 names: [{
                     name: '王健',
-                    link: 'http://youngyu.net/',
+                    link: 'http://faculty.bjtu.edu.cn/8203/',
                     detail: '讲师，研究方向量子密码',
-                    img: ''
+                    img: '/img/teacher_wang.jpg'
                 }]
             }, {
                 category: '博士',
@@ -3970,7 +3955,7 @@ var Team = function (_React$Component) {
                         _react2.default.createElement(
                             'a',
                             { href: obj.link, target: '_blank' },
-                            _react2.default.createElement('img', { style: { width: '100px', height: '100px' }, src: obj.img || '/img/bjtu.jpeg' }),
+                            _react2.default.createElement('img', { style: { width: '100px', height: 'auto' }, src: obj.img || '/img/bjtu.jpeg' }),
                             _react2.default.createElement(
                                 'div',
                                 { className: 'name', style: { marginTop: '20px', color: '#4ab344' } },

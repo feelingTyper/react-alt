@@ -12,6 +12,7 @@ class DevicesList extends React.Component {
     componentDidMount() {
         DevicesListStores.listen(this.onChange);
         var _top = $('.dev-list').offset().top;
+        console.log(_top);
         $(document).scroll(function() {
             if ($(document).scrollTop() > 300) {
                 $('.dev-list').css({
@@ -19,7 +20,7 @@ class DevicesList extends React.Component {
                 })
             } else {
                 $('.dev-list').css({
-                    top: _top
+                    top: 236
                 })
             }
         });
@@ -48,18 +49,16 @@ class DevicesList extends React.Component {
             outline: {
                 name: '锐捷交换机',
                 version: 'RG-1600i',
-                date: '2017-3-3',
                 corporation: '锐捷'
             },
             detail: `划分vlan，在本网络结构中上连锐捷防火墙，下连台式服务器，包含内部用户区域，包括一些靶机,s
             nort服务主机。是用户域的接入交换机。`
         }, {
             name: '锐捷防火墙',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/ruijie_firewall.jpg',
             outline: {
                 name: '锐捷防火墙',
                 version: 'RG-WALL1600-SI',
-                date: '2017-3-3',
                 corporation: '锐捷'
             },
             detail: `锐捷 RG-WALL 1600-si是锐捷网络推出的业内集安全、路由、交换于一体的防火墙产品，
@@ -68,23 +67,23 @@ class DevicesList extends React.Component {
             结构中划分了用户域、采集汇聚域、分析域、内网用户接入域。`
         }, {
             name: '思科交换机',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/cisco.jpeg',
             outline: {
                 name: '思科200E系列交换机',
                 version: '200E',
                 date: '2017-3-3',
-                corp: '锐捷'
+                corp: '思科'
             },
             detail: `划分vlan，在本网络结构中是DMZ的接入交换接，在交换机下连接HP服务器，搭建各类服务，包括mail、
             ftp、git等`
         }, {
             name: 'TP-LINK交换机',
-            pic: '/img/ruijie_sw_1.png',
+            pic: '/img/tplink.jpg',
             outline: {
                 name: 'TP-LINK交换机',
                 version: '200E',
                 date: '2017-3-3',
-                corp: '锐捷'
+                corp: 'TP-Link'
             },
             detail: `划分vlan，在本网络结构中上连锐捷防火墙，下连天镜漏洞扫描，存储服务器，是采集汇集域的接入交换机。`
         }, {
@@ -212,10 +211,6 @@ class DevicesList extends React.Component {
                                 <td>{item.outline.version}</td>
                             </tr>
                             <tr>
-                                <td>生产日期</td>
-                                <td>{item.outline.date}</td>
-                            </tr>
-                            <tr>
                                 <td>生产公司</td>
                                 <td>{item.outline.corp}</td>
                             </tr>
@@ -233,7 +228,7 @@ class DevicesList extends React.Component {
         return (
             <div className = "devices-list container" style={{borderTop: '1px solid #eee'}}>
                 <div style={{textAlign: 'center', fontSize:'32px', color:'#4ab344', fontWeight: 'bold'}}>设备清单</div>
-                <div className="main" style = {{marginTop: '50px', backgroundColor:'#eee', paddingBottom:'200px'}}>
+                <div className="main" style = {{marginTop: '50px', backgroundColor:'#effefe', paddingBottom:'200px'}}>
                     <div className="row clearfix">
                         <div className="left col-xs-3">
                             <ul className="dev-list">{deviceNames}</ul>

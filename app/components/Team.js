@@ -28,9 +28,9 @@ class Team extends React.Component {
             category: '老师',
             names: [{
                 name: '王健',
-                link: 'http://youngyu.net/',
+                link: 'http://faculty.bjtu.edu.cn/8203/',
                 detail: '讲师，研究方向量子密码',
-                img: ''
+                img: '/img/teacher_wang.jpg'
             }]
         }, {
             category: '博士',
@@ -76,7 +76,7 @@ class Team extends React.Component {
                 return (
                     <div className="col-xs-4" key={index} style={{textAlign:'center', marginBottom:'40px'}}>
                         <a href={obj.link} target="_blank">
-                            <img style={{width: '100px', height: '100px'}} src={obj.img||'/img/bjtu.jpeg'} />
+                            <img style={{width: '100px', height: 'auto'}} src={obj.img||'/img/bjtu.jpeg'} />
                             <div className="name" style={{marginTop: '20px', color: '#4ab344'}}>{obj.name}</div>
                         </a>
                             <div className="info" style={{marginTop: '20px'}}><strong>简介：</strong>&nbsp;&nbsp;{obj.detail}</div>

@@ -54,7 +54,8 @@ var list = [
     /**
      * file 43
      */
-    'ADFA-LD.zip'
+    'ADFA-LD.zip',
+    'kddcup.data.gz'
 ]
 
 module.exports = list;
