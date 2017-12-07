@@ -10,13 +10,8 @@ class Review extends React.Component {
 
 
         return (
-            <div className="intent">
-                <HomeModuleTitle title= {{cn: '目标', en: '——  INTENTION  ——'}} />
-                <div className="intent-content container">
-                    <div className="row clearfix">
-                    <a href="/intention">{contentList}</a>
-                    </div>
-                </div>
+            <div className="review">
+               <h3>{title}</h3>
             </div>
         )
     }

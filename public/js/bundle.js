@@ -459,7 +459,7 @@ var Carousel = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "item active" },
-                        _react2.default.createElement("img", { src: "/img/1.jpg", alt: "First slide" })
+                        _react2.default.createElement("img", { src: "/img/1.jpeg", alt: "First slide" })
                     ),
                     _react2.default.createElement(
                         "div",
@@ -2632,7 +2632,7 @@ var Project = function (_React$Component) {
                     title: '众创云平台',
                     url: 'http://192.168.10.100:8080'
                 }, {
-                    img: '/img/pingtai.png',
+                    img: '/img/pingtai1.png',
                     info: '智能化网络信息安全实验平台',
                     title: '智能化网络信息安全实验平台',
                     url: '/'
@@ -2946,23 +2946,14 @@ var Resource = function (_React$Component) {
             }];
 
             var resourceTools = [{
-                title: '公开的工具',
-                collections: [{
-                    name: 'svn',
-                    url: 'https://baidu.com'
-                }, {
-                    name: 'snort',
-                    url: 'https://v.qq.com'
-                }]
+                name: '网络附属存储（NAS）',
+                url: 'http://192.168.2.139'
             }, {
-                title: '实验室内部工具',
-                collections: [{
-                    name: 'QNAP存储箱',
-                    url: 'http://192.168.2.139'
-                }, {
-                    name: 'git',
-                    url: 'https://v.qq.com'
-                }]
+                name: '网络附属存储（NAS）',
+                url: 'http://192.168.2.139'
+            }, {
+                name: '网络附属存储（NAS）',
+                url: 'http://192.168.2.139'
             }];
 
             return _react2.default.createElement(
@@ -3364,11 +3355,20 @@ var ResourceTools = function (_React$Component) {
         value: function render() {
             var datas = this.props.resourceTools;
             var dataList = datas.map(function (data, index) {
-                var classstyle = index % 2 == 0 ? 'col-xs-5' : 'col-xs-5 col-xs-offset-2';
+                console.log(data);
                 return _react2.default.createElement(
                     'div',
-                    { className: classstyle, key: index },
-                    _react2.default.createElement(_ResourceDataBlock2.default, { resourceData: data, usefor: 'tools' })
+                    { className: 'col-xs-4 tool', key: index },
+                    _react2.default.createElement(
+                        'a',
+                        { className: 'clearfix', href: data.url, target: '_blank' },
+                        _react2.default.createElement('img', { className: 'img-responsive', src: '/img/tools.jpg', style: { width: '50px', height: '50px' }, alt: '' }),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            data.name
+                        )
+                    )
                 );
             });
 
@@ -3386,7 +3386,7 @@ var ResourceTools = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'row clearfix' },
+                    { className: 'row clearfix tools' },
                     dataList
                 )
             );

@@ -10,10 +10,13 @@ class ResourceTools extends React.Component {
     render() {
         let datas = this.props.resourceTools;
         let dataList = datas.map((data, index) => {
-            let classstyle = index % 2 == 0 ? 'col-xs-5' : 'col-xs-5 col-xs-offset-2';
+            console.log(data);
             return (
-                <div className={classstyle} key={index}>
-                    <ResourceDataBlock resourceData={data} usefor="tools" />
+                <div className="col-xs-4 tool" key={index}>
+                <a className="clearfix" href={data.url} target="_blank">
+                    <img className="img-responsive" src="/img/tools.jpg" style={{width:'50px', height:'50px'}} alt=""/>
+                    <div>{data.name}</div>
+                </a>
                 </div>
             );
         })
@@ -23,7 +26,7 @@ class ResourceTools extends React.Component {
                 <div className="tools-title clearfix">
                     <div style={{marginTop: '20px'}}><HomeModuleTitle title= {{cn: '工具', en: 'TOOLS'}} /></div>
                 </div>
-                <div className="row clearfix">
+                <div className="row clearfix tools">
                     {dataList}
                 </div>
             </div>

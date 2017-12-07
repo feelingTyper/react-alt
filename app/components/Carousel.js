@@ -15,7 +15,7 @@ class Carousel extends React.Component {
                 </ol>   
                 <div className="carousel-inner">
                     <div className="item active">
-                        <img src="/img/1.jpg" alt="First slide" />
+                        <img src="/img/1.jpeg" alt="First slide" />
                     </div>
                     <div className="item">
                         <img src="/img/2.jpeg" alt="Second slide" />

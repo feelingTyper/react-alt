@@ -122,24 +122,15 @@ class Resource extends React.Component {
         }];
 
         let resourceTools = [{
-            title: '公开的工具',
-            collections: [{
-                name: 'svn',
-                url: 'https://baidu.com'
-            }, {
-                name: 'snort',
-                url: 'https://v.qq.com'
-            }]
+            name: '网络附属存储（NAS）',
+            url: 'http://192.168.2.139'
         }, {
-            title: '实验室内部工具',
-            collections: [{
-                name: 'QNAP存储箱',
-                url: 'http://192.168.2.139'
-            }, {
-                name: 'git',
-                url: 'https://v.qq.com'
-            }]
-        }];
+            name: '网络附属存储（NAS）',
+            url: 'http://192.168.2.139'
+        }, {
+            name: '网络附属存储（NAS）',
+            url: 'http://192.168.2.139'
+        }, ];
 
         return (
             <div className="resource clearfix">

@@ -44,7 +44,7 @@ class Project extends React.Component {
                 title: '众创云平台',
                 url: 'http://192.168.10.100:8080'
             }, {
-                img: '/img/pingtai.png',
+                img: '/img/pingtai1.png',
                 info: '智能化网络信息安全实验平台',
                 title: '智能化网络信息安全实验平台',
                 url: '/'
