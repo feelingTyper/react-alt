@@ -100,11 +100,15 @@ class Team extends React.Component {
                     <div className="container">
                         <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR GROUP'}} /></div>
                         <div className="row" style={{marginBottom: '50px'}}>
-                            <div className="col-md-7">
+                            <div className="col-md-6">
                                 <img className="img-responsive" src="img/1.jpg" />
                             </div>
-                            <div className="col-xs-5">
-                                <p>整体介绍团队特点，包括研究方向，老师学生人数等</p>
+                            <div className="col-xs-6">
+                                <p style={{lineHeight: '30px', textIndent: '25px'}}>
+本团队隶属于计算机学院信息安全系，主要研究内容为网络安全态势感知中的情报收集，数据挖掘，威胁评估，日志筛选，攻击溯源，攻击预测以及机器学习在安全领域的应用研究等。
+本团队具有深厚的学术积淀与科研功底，截止目前论文50余篇，其中SCI论文9篇（其中最高单篇SCI库中引用22次）、EI期刊12篇，ISTP论文15篇；授权专利3项，实申专利2项；授权软件著作权3项；编著《移动网络安全技术与应用》、《身份身份认证》等图书5部；参编企业标准1项，行业标准3项，参与863，自然基金，战略先导等10余个项目。
+本团队具有丰富的工程经验， 设计并开发了资源共享平台， 众创云平台等。 其中众创云平台结合了虚拟桌面云环境的资源动态分配与管理， 应用了基于角色与行为的访问控制技术， 实现了一套流程管控方法， 并申请了国家专利。
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -2925,20 +2925,38 @@ var Resource = function (_React$Component) {
             var resourceData = [{
                 title: '公开的数据集',
                 collections: [{
-                    name: 'kdd cup99',
-                    url: 'https://baidu.com'
+                    name: 'Honeynet',
+                    url: 'http://old.honeynet.org/papers/stats/'
+                }, {
+                    name: '林肯实验室DAPRA1999',
+                    url: 'http://www.ll.mit.edu/IST/ideval/data/1999/1999_data_index.html'
+                }, {
+                    name: 'KDD CUP99',
+                    url: 'http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html'
+                }, {
+                    name: 'IEEE VAST 2008 CHALLENGE',
+                    url: 'https://www.cs.umd.edu/hcil/VASTchallenge08/'
+                }, {
+                    name: 'Enron Email Dataset',
+                    url: 'https://www.cs.cmu.edu/~enron/'
+                }, {
+                    name: 'ITA',
+                    url: 'http://ita.ee.lbl.gov/html/contrib/BC.html'
+                }, {
+                    name: 'CAPEC',
+                    url: 'http://capec.mitre.org/data/index.html'
                 }, {
                     name: 'ADFA',
-                    url: 'https://v.qq.com'
+                    url: 'https://www.unsw.adfa.edu.au/australian-centre-for-cyber-security/cybersecurity/ADFA-IDS-Datasets/'
                 }]
             }, {
                 title: '实验室内部数据集',
                 collections: [{
-                    name: 'kdd cup99',
-                    url: 'https://baidu.com'
+                    id: 44,
+                    name: 'KDD CUP99'
                 }, {
-                    name: 'ADFA',
-                    url: 'https://v.qq.com'
+                    id: 43,
+                    name: 'ADFA'
                 }]
             }];
 
@@ -2954,8 +2972,8 @@ var Resource = function (_React$Component) {
             }, {
                 title: '实验室内部工具',
                 collections: [{
-                    name: 'ftp',
-                    url: 'https://baidu.com'
+                    name: 'QNAP存储箱',
+                    url: 'http://192.168.2.139'
                 }, {
                     name: 'git',
                     url: 'https://v.qq.com'
@@ -3105,6 +3123,7 @@ var ResourceDataBlock = function (_React$Component) {
             var usefor = this.props.usefor;
             var title = usefor == 'dataset' ? '数据集' : '工具';
             var rows = data.collections.map(function (item, index) {
+                var url = '/download/' + item.id;
                 return _react2.default.createElement(
                     'div',
                     { key: index },
@@ -3115,8 +3134,8 @@ var ResourceDataBlock = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'a',
-                        { href: item.url, target: '_blank' },
-                        '\u4F7F\u7528\u65B9\u5F0F\u548C\u4E0B\u8F7D'
+                        { href: url, target: '_blank' },
+                        '\u4E0B\u8F7D\u94FE\u63A5'
                     )
                 );
             });
@@ -4011,16 +4030,16 @@ var Team = function (_React$Component) {
                             { className: 'row', style: { marginBottom: '50px' } },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'col-md-7' },
+                                { className: 'col-md-6' },
                                 _react2.default.createElement('img', { className: 'img-responsive', src: 'img/1.jpg' })
                             ),
                             _react2.default.createElement(
                                 'div',
-                                { className: 'col-xs-5' },
+                                { className: 'col-xs-6' },
                                 _react2.default.createElement(
                                     'p',
-                                    null,
-                                    '\u6574\u4F53\u4ECB\u7ECD\u56E2\u961F\u7279\u70B9\uFF0C\u5305\u62EC\u7814\u7A76\u65B9\u5411\uFF0C\u8001\u5E08\u5B66\u751F\u4EBA\u6570\u7B49'
+                                    { style: { lineHeight: '30px', textIndent: '25px' } },
+                                    '\u672C\u56E2\u961F\u96B6\u5C5E\u4E8E\u8BA1\u7B97\u673A\u5B66\u9662\u4FE1\u606F\u5B89\u5168\u7CFB\uFF0C\u4E3B\u8981\u7814\u7A76\u5185\u5BB9\u4E3A\u7F51\u7EDC\u5B89\u5168\u6001\u52BF\u611F\u77E5\u4E2D\u7684\u60C5\u62A5\u6536\u96C6\uFF0C\u6570\u636E\u6316\u6398\uFF0C\u5A01\u80C1\u8BC4\u4F30\uFF0C\u65E5\u5FD7\u7B5B\u9009\uFF0C\u653B\u51FB\u6EAF\u6E90\uFF0C\u653B\u51FB\u9884\u6D4B\u4EE5\u53CA\u673A\u5668\u5B66\u4E60\u5728\u5B89\u5168\u9886\u57DF\u7684\u5E94\u7528\u7814\u7A76\u7B49\u3002 \u672C\u56E2\u961F\u5177\u6709\u6DF1\u539A\u7684\u5B66\u672F\u79EF\u6DC0\u4E0E\u79D1\u7814\u529F\u5E95\uFF0C\u622A\u6B62\u76EE\u524D\u8BBA\u658750\u4F59\u7BC7\uFF0C\u5176\u4E2DSCI\u8BBA\u65879\u7BC7\uFF08\u5176\u4E2D\u6700\u9AD8\u5355\u7BC7SCI\u5E93\u4E2D\u5F15\u752822\u6B21\uFF09\u3001EI\u671F\u520A12\u7BC7\uFF0CISTP\u8BBA\u658715\u7BC7\uFF1B\u6388\u6743\u4E13\u52293\u9879\uFF0C\u5B9E\u7533\u4E13\u52292\u9879\uFF1B\u6388\u6743\u8F6F\u4EF6\u8457\u4F5C\u67433\u9879\uFF1B\u7F16\u8457\u300A\u79FB\u52A8\u7F51\u7EDC\u5B89\u5168\u6280\u672F\u4E0E\u5E94\u7528\u300B\u3001\u300A\u8EAB\u4EFD\u8EAB\u4EFD\u8BA4\u8BC1\u300B\u7B49\u56FE\u4E665\u90E8\uFF1B\u53C2\u7F16\u4F01\u4E1A\u6807\u51C61\u9879\uFF0C\u884C\u4E1A\u6807\u51C63\u9879\uFF0C\u53C2\u4E0E863\uFF0C\u81EA\u7136\u57FA\u91D1\uFF0C\u6218\u7565\u5148\u5BFC\u7B4910\u4F59\u4E2A\u9879\u76EE\u3002 \u672C\u56E2\u961F\u5177\u6709\u4E30\u5BCC\u7684\u5DE5\u7A0B\u7ECF\u9A8C\uFF0C \u8BBE\u8BA1\u5E76\u5F00\u53D1\u4E86\u8D44\u6E90\u5171\u4EAB\u5E73\u53F0\uFF0C \u4F17\u521B\u4E91\u5E73\u53F0\u7B49\u3002 \u5176\u4E2D\u4F17\u521B\u4E91\u5E73\u53F0\u7ED3\u5408\u4E86\u865A\u62DF\u684C\u9762\u4E91\u73AF\u5883\u7684\u8D44\u6E90\u52A8\u6001\u5206\u914D\u4E0E\u7BA1\u7406\uFF0C \u5E94\u7528\u4E86\u57FA\u4E8E\u89D2\u8272\u4E0E\u884C\u4E3A\u7684\u8BBF\u95EE\u63A7\u5236\u6280\u672F\uFF0C \u5B9E\u73B0\u4E86\u4E00\u5957\u6D41\u7A0B\u7BA1\u63A7\u65B9\u6CD5\uFF0C \u5E76\u7533\u8BF7\u4E86\u56FD\u5BB6\u4E13\u5229\u3002'
                                 )
                             )
                         )
@@ -4702,7 +4721,7 @@ var ServiceStore = function () {
 				}
 			}, {
 				name: '性能监控NAGIOS',
-				url: 'http://192.168.10.63',
+				url: 'http://192.168.10.63/nagios',
 				'detail': '性能监控NAGIOS，监控系统性能，评估系统状态'
 			}]
 		}, {

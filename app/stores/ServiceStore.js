@@ -132,7 +132,7 @@ class ServiceStore {
 				}
 			}, {
 				name: '性能监控NAGIOS',
-				url: 'http://192.168.10.63',
+				url: 'http://192.168.10.63/nagios',
 				'detail': '性能监控NAGIOS，监控系统性能，评估系统状态'
 			}]
 		}, {

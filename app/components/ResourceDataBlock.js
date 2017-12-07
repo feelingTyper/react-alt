@@ -10,10 +10,11 @@ class ResourceDataBlock extends React.Component {
         let usefor = this.props.usefor;
         let title = usefor == 'dataset' ? '数据集' : '工具';
         let rows = data.collections.map((item, index) => {
+            let url = '/download/' + item.id;
             return (
                 <div key={index}>
                     <span>{item.name}</span>
-                    <a href={item.url} target="_blank">使用方式和下载</a>    
+                    <a href={url} target="_blank">下载链接</a>    
                 </div>
             )
         });

@@ -86,20 +86,38 @@ class Resource extends React.Component {
         let resourceData = [{
             title: '公开的数据集',
             collections: [{
-                name: 'kdd cup99',
-                url: 'https://baidu.com'
+                name: 'Honeynet',
+                url: 'http://old.honeynet.org/papers/stats/'
+            }, {
+                name: '林肯实验室DAPRA1999',
+                url: 'http://www.ll.mit.edu/IST/ideval/data/1999/1999_data_index.html'
+            }, {
+                name: 'KDD CUP99',
+                url: 'http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html'
+            }, {
+                name: 'IEEE VAST 2008 CHALLENGE',
+                url: 'https://www.cs.umd.edu/hcil/VASTchallenge08/'
+            }, {
+                name: 'Enron Email Dataset',
+                url: 'https://www.cs.cmu.edu/~enron/'
+            }, {
+                name: 'ITA',
+                url: 'http://ita.ee.lbl.gov/html/contrib/BC.html'
+            }, {
+                name: 'CAPEC',
+                url: 'http://capec.mitre.org/data/index.html'
             }, {
                 name: 'ADFA',
-                url: 'https://v.qq.com'
+                url: 'https://www.unsw.adfa.edu.au/australian-centre-for-cyber-security/cybersecurity/ADFA-IDS-Datasets/'
             }]
         }, {
             title: '实验室内部数据集',
             collections: [{
-                name: 'kdd cup99',
-                url: 'https://baidu.com'
+                id: 44,
+                name: 'KDD CUP99'
             }, {
-                name: 'ADFA',
-                url: 'https://v.qq.com'
+                id: 43,
+                name: 'ADFA'
             }]
         }];
 
@@ -115,8 +133,8 @@ class Resource extends React.Component {
         }, {
             title: '实验室内部工具',
             collections: [{
-                name: 'ftp',
-                url: 'https://baidu.com'
+                name: 'QNAP存储箱',
+                url: 'http://192.168.2.139'
             }, {
                 name: 'git',
                 url: 'https://v.qq.com'
