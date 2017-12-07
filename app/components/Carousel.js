@@ -15,19 +15,19 @@ class Carousel extends React.Component {
                 </ol>   
                 <div className="carousel-inner">
                     <div className="item active">
-                        <img src="/img/1.jpeg" alt="First slide" />
+                        <img src="/img/1.jpg" alt="网站整体建设" />
                     </div>
                     <div className="item">
-                        <img src="/img/2.jpeg" alt="Second slide" />
+                        <img src="/img/2.jpg" alt="网络各域说明" />
                     </div>
                     <div className="item">
-                        <img src="/img/3.jpg" alt="Third slide" />
+                        <img src="/img/3.jpg" alt="网络软件介绍" />
                     </div>
                 </div>
                 <a className="carousel-control right" href="#myCarousel" 
-                   data-slide="prev"></a>
-                <a className="carousel-control left" href="#myCarousel" 
                    data-slide="next"></a>
+                <a className="carousel-control left" href="#myCarousel" 
+                   data-slide="prev"></a>
             </div>
         )
     }

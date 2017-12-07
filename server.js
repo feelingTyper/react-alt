@@ -25,7 +25,7 @@ var FileStreamRotator = require('file-stream-rotator')
 var routes = require('./app/routes');
 var fs = require('fs')
 var app = express();
-
+/*
 var options = {
   useMongoClient: true,
   autoIndex: false,
@@ -44,7 +44,7 @@ mongoose.connect(config.database, options, function(error) {
 mongoose.connection.on('error', function() {
   console.info('Error: Could not connect to MongoDB. Did you forget to run `mongod`?'.red);
 });
-
+*/
 app.set('port', process.env.PORT || 3000);
 app.use(compression());
 // app.use(logger('dev'));

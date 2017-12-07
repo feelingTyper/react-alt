@@ -459,23 +459,23 @@ var Carousel = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "item active" },
-                        _react2.default.createElement("img", { src: "/img/1.jpeg", alt: "First slide" })
+                        _react2.default.createElement("img", { src: "/img/1.jpg", alt: "\u7F51\u7AD9\u6574\u4F53\u5EFA\u8BBE" })
                     ),
                     _react2.default.createElement(
                         "div",
                         { className: "item" },
-                        _react2.default.createElement("img", { src: "/img/2.jpeg", alt: "Second slide" })
+                        _react2.default.createElement("img", { src: "/img/2.jpg", alt: "\u7F51\u7EDC\u5404\u57DF\u8BF4\u660E" })
                     ),
                     _react2.default.createElement(
                         "div",
                         { className: "item" },
-                        _react2.default.createElement("img", { src: "/img/3.jpg", alt: "Third slide" })
+                        _react2.default.createElement("img", { src: "/img/3.jpg", alt: "\u7F51\u7EDC\u8F6F\u4EF6\u4ECB\u7ECD" })
                     )
                 ),
                 _react2.default.createElement("a", { className: "carousel-control right", href: "#myCarousel",
-                    "data-slide": "prev" }),
+                    "data-slide": "next" }),
                 _react2.default.createElement("a", { className: "carousel-control left", href: "#myCarousel",
-                    "data-slide": "next" })
+                    "data-slide": "prev" })
             );
         }
     }]);
