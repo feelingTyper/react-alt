@@ -9,18 +9,18 @@ class Intention extends React.Component {
     render() {
         let contents = [{
             img: '/img/os.png',
-            subTitle: '攻防实验平台',
-            content: '攻击防御实验，模拟真实网络运行状态，感知网络态势'
+            subTitle: '实现满足科研需求的功能',
+            content: '提供实验网络环境，实验数据，测试环境，数据分析算法和系统'
 
         }, {
             img: '/img/bigdata.png',
-            subTitle: '大数据分析',
-            content: '分布式数据存储计算平台，海量数据融合分析处理'
+            subTitle: '实现应用需求的功能',
+            content: '功能原型验证，安全问题浮现与原型的功能展示，功能产品的验证'
 
         }, {
             img: '/img/cloud.png',
-            subTitle: '数据开放服务',
-            content: '论文算法，公开数据集，实验室内部数据集开放下载服务'
+            subTitle: '实现人才培养需求的功能',
+            content: '提供实验网络环境，工具环境，网络安全时间复现规程，提供演示和实践环境'
 
         }];
 

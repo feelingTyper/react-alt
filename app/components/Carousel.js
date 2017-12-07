@@ -18,7 +18,7 @@ class Carousel extends React.Component {
                         <img src="/img/1.jpg" alt="First slide" />
                     </div>
                     <div className="item">
-                        <img src="/img/2.jpg" alt="Second slide" />
+                        <img src="/img/2.jpeg" alt="Second slide" />
                     </div>
                     <div className="item">
                         <img src="/img/3.jpg" alt="Third slide" />

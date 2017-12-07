@@ -332,6 +332,9 @@ ul {
   text-align: center;
   line-height: 30px;
 }
+.more a {
+  display: block;
+}
 .service {
   margin-top: -20px;
 }
@@ -393,7 +396,7 @@ ul {
   font-size: 18px;
 }
 .resource .resource-des .des-block .paper-item {
-  line-height: 25px;
+  line-height: 45px;
   padding: 10px 0;
   border-bottom: 1px solid #f0f3f5;
 }
@@ -520,4 +523,18 @@ ul {
 }
 .intention-detail .table th {
   text-align: center;
+}
+.resources-more .title div {
+  border: 1px solid #ddd;
+  border-right: none;
+  line-height: 35px;
+  text-align: center;
+  background-color: #efefef;
+}
+.resources-more .title div a {
+  color: #333;
+  display: block;
+}
+.resources-more .title div:last-child {
+  border-right: 1px solid #ddd;
 }

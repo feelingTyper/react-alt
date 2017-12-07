@@ -110,7 +110,7 @@ class Resource extends React.Component {
                 <div className="pic">
                 </div>
                 <div className="resource-des" style={{marginTop: '20px'}}>
-                    <HomeModuleTitle  title={{cn: '论文', en: 'PAPER'}} />
+                    <HomeModuleTitle  title={{cn: '相关文献', en: 'LITERATURE'}} />
                     <div className="container">
                         <ResourceDes  resourceDes={Resources} />
                     </div>

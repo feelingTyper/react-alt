@@ -11,10 +11,11 @@ class ResourceDesBlock extends React.Component {
     render() {
         let des = this.props.resource;
         let journalList = des.journal.map((journal, index) => {
+            let url = '/download/' + journal.id;
             return (
                 <div className="paper-item clearfix" key={index}>
-                    <div className="col-xs-10"><Link to={journal.url}>{journal.name}</Link></div>
-                    <div className="col-xs-2 ">详细</div>
+                    <div className="col-xs-10"><Link to={url} target="_blank">{journal.name}</Link></div>
+                    <div className="col-xs-2"><a href="">读后评</a></div>
                 </div>
             );
         });

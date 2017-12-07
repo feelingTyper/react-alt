@@ -398,6 +398,9 @@ ul {
         border: 1px solid @border-color;
         text-align: center;
         line-height: 30px;
+        a {
+            display: block;
+        }
 }
 
 .service {
@@ -462,18 +465,15 @@ ul {
         .des-block {
             background-color: #fff;
             margin-bottom: 20px;  
-            // border-top: 1px solid @border-color;
-            // border-bottom: 1px solid @border-color;
 
             .des-title {
                 line-height: 20px;
                 padding: 30px;
                 font-size: 18px;
-                // border-bottom: 1px solid @border-color;
             }
 
             .paper-item {
-                line-height: 25px;
+                line-height: 45px;
                 padding: 10px 0;
                 a {
                     color: @orange-color;
@@ -628,6 +628,25 @@ ul {
         }
         th {
             text-align: center;
+        }
+    }
+}
+
+.resources-more {
+    .title div {
+        border:1px solid #ddd;
+        border-right: none;
+        line-height: 35px;
+        text-align: center;
+        background-color: #efefef;
+
+        a {
+            color: #333;
+            display: block;
+        }
+
+        &:last-child {
+            border-right: 1px solid #ddd;
         }
     }
 }

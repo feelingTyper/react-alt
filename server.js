@@ -18,6 +18,7 @@ var Router = require('react-router');
 var swig = require('swig');
 var xml2js = require('xml2js');
 var services = require('./routers/services');
+var download = require('./routers/download');
 var character = require('./routers/character');
 var config = require('./config');
 var FileStreamRotator = require('file-stream-rotator')
@@ -83,6 +84,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * 
  */
 app.use('/api', services);
+app.use('/api', download);
 
 
 app.use(function(req, res) {

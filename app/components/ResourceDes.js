@@ -12,10 +12,12 @@ class ResourceDes extends React.Component {
     render() {
         let resourceDes = this.props.resourceDes;
         let resourceList = resourceDes.map((resource, index) => {
+            let route = resource.title == '期刊' ? '/resources/journal' : resource.title == '标准' ? '/resources/standard' : 'resources/patent';
+
             return (
                 <div className="col-xs-12" style={{marginBottom: '100px'}} key={index}>
                     <ResourceDesBlock resource={resource} />
-                    <div className="more col-xs-2 col-xs-offset-5">more</div>
+                    <div className="more col-xs-2 col-xs-offset-5"><a href={route}>more</a></div>
                 </div>
             )
         });

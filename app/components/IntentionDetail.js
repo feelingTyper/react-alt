@@ -94,7 +94,7 @@ class IntentionDetail extends React.Component {
                                     <p>4）提供演示和实践环境</p>
                                 </td>
                                 <td>
-                                    III实现人才培养需求的功能
+                                    III 实现人才培养需求的功能
                                 </td>
                             </tr>
 
