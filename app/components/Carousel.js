@@ -21,7 +21,7 @@ class Carousel extends React.Component {
                         <img src="/img/2.jpg" alt="网络各域说明" />
                     </div>
                     <div className="item">
-                        <img src="/img/3.jpg" alt="网络软件介绍" />
+                        <img src="/img/33.jpg" alt="网络软件介绍" />
                     </div>
                 </div>
                 <a className="carousel-control right" href="#myCarousel" 

@@ -469,7 +469,7 @@ var Carousel = function (_React$Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "item" },
-                        _react2.default.createElement("img", { src: "/img/3.jpg", alt: "\u7F51\u7EDC\u8F6F\u4EF6\u4ECB\u7ECD" })
+                        _react2.default.createElement("img", { src: "/img/33.jpg", alt: "\u7F51\u7EDC\u8F6F\u4EF6\u4ECB\u7ECD" })
                     )
                 ),
                 _react2.default.createElement("a", { className: "carousel-control right", href: "#myCarousel",
