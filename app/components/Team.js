@@ -76,7 +76,7 @@ class Team extends React.Component {
                 return (
                     <div className="col-xs-4" key={index} style={{textAlign:'center', marginBottom:'40px'}}>
                         <a href={obj.link} target="_blank">
-                            <img style={{width: '100px', height: 'auto'}} src={obj.img||'/img/bjtu.jpeg'} />
+                            <img style={{width: '100px', height: 'auto', border: '1px solid #ddd'}} src={obj.img||'/img/u18.png'} />
                             <div className="name" style={{marginTop: '20px', color: '#4ab344'}}>{obj.name}</div>
                         </a>
                             <div className="info" style={{marginTop: '20px'}}><strong>简介：</strong>&nbsp;&nbsp;{obj.detail}</div>

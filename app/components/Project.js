@@ -34,7 +34,7 @@ class Project extends React.Component {
         let projects = [{
             title: '完结项目',
             projects: [{
-                img: '/img/xiaodou.jpg',
+                img: '/img/xiaodou1.png',
                 info: '资源共享平台',
                 title: '资源共享平台',
                 url: 'http://192.168.10.200'
@@ -83,11 +83,6 @@ class Project extends React.Component {
                 info: '',
                 title: '智能物联设备安全研究与验证实现',
                 url: ''
-            }, {
-                img: '/img/2.jpg',
-                info: '',
-                title: '面向多域互联网的态势感知关键技术研究',
-                url: ''
             }]
         }];
 
@@ -112,19 +107,24 @@ class Project extends React.Component {
 
                     return (
                         <li className="col-xs-4" key={index} style={{marginBottom: '40px'}}>
-                            <div className="v1">
-                                <a href="#">
-                                    <div style={imgstyle}>
-                                    </div>
-                                </a>
-                                <span className="div1">
-                                 <h3 style={{color: '#fff'}}> 信息简介：</h3> 
-                                    <span className="txt">
-                                        {pro.info}
+                            <div style={{border:'1px solid #ddd', paddingBottom: '20px'}}>
+                                <div className="v1">
+                                    <a href="#">
+                                        <div style={imgstyle}>
+                                        </div>
+                                    </a>
+                                    <span className="div1">
+                                     <h3 style={{color: '#fff'}}> 信息简介：</h3> 
+                                        <span className="txt">
+                                            {pro.info}
+                                        </span>
                                     </span>
-                                </span>
+                                </div>
+                                <div style={{padding: '0 40px', marginTop:'30px'}}>
+                                    <div style={{borderBottom: '1px solid #ddd'}}></div>
+                                </div>
+                                <div className="project-title" dangerouslySetInnerHTML={{__html:link}}></div>
                             </div>
-                            <div className="project-title" dangerouslySetInnerHTML={{__html:link}}></div>
                         </li>
                     );
                 } else {

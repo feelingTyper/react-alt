@@ -11,11 +11,10 @@ router.post('/download', function(req, res, next) {
     var q = req.body;
     var index = q.id;
     var name = list[index];
-    if (!name) next();
 
     res.download('store/download/' + name, function(err) {
         if (err) {
-            next()
+            next(err);
         } else {
             console.log('download success');
         }

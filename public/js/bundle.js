@@ -2622,7 +2622,7 @@ var Project = function (_React$Component) {
             var projects = [{
                 title: '完结项目',
                 projects: [{
-                    img: '/img/xiaodou.jpg',
+                    img: '/img/xiaodou1.png',
                     info: '资源共享平台',
                     title: '资源共享平台',
                     url: 'http://192.168.10.200'
@@ -2669,11 +2669,6 @@ var Project = function (_React$Component) {
                     info: '',
                     title: '智能物联设备安全研究与验证实现',
                     url: ''
-                }, {
-                    img: '/img/2.jpg',
-                    info: '',
-                    title: '面向多域互联网的态势感知关键技术研究',
-                    url: ''
                 }]
             }];
 
@@ -2701,28 +2696,37 @@ var Project = function (_React$Component) {
                             { className: 'col-xs-4', key: index, style: { marginBottom: '40px' } },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'v1' },
+                                { style: { border: '1px solid #ddd', paddingBottom: '20px' } },
                                 _react2.default.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    _react2.default.createElement('div', { style: imgstyle })
-                                ),
-                                _react2.default.createElement(
-                                    'span',
-                                    { className: 'div1' },
+                                    'div',
+                                    { className: 'v1' },
                                     _react2.default.createElement(
-                                        'h3',
-                                        { style: { color: '#fff' } },
-                                        ' \u4FE1\u606F\u7B80\u4ECB\uFF1A'
+                                        'a',
+                                        { href: '#' },
+                                        _react2.default.createElement('div', { style: imgstyle })
                                     ),
                                     _react2.default.createElement(
                                         'span',
-                                        { className: 'txt' },
-                                        pro.info
+                                        { className: 'div1' },
+                                        _react2.default.createElement(
+                                            'h3',
+                                            { style: { color: '#fff' } },
+                                            ' \u4FE1\u606F\u7B80\u4ECB\uFF1A'
+                                        ),
+                                        _react2.default.createElement(
+                                            'span',
+                                            { className: 'txt' },
+                                            pro.info
+                                        )
                                     )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'project-title', dangerouslySetInnerHTML: { __html: link } })
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { style: { padding: '0 40px', marginTop: '30px' } },
+                                    _react2.default.createElement('div', { style: { borderBottom: '1px solid #ddd' } })
+                                ),
+                                _react2.default.createElement('div', { className: 'project-title', dangerouslySetInnerHTML: { __html: link } })
+                            )
                         );
                     } else {
                         return _react2.default.createElement(
@@ -2949,11 +2953,14 @@ var Resource = function (_React$Component) {
                 name: '网络附属存储（NAS）',
                 url: 'http://192.168.2.139'
             }, {
-                name: '网络附属存储（NAS）',
-                url: 'http://192.168.2.139'
+                name: 'LogAnalyzer日志监控工具',
+                url: 'http://192.168.2.139:8080/share.cgi?ssid=0foCuHJ'
             }, {
-                name: '网络附属存储（NAS）',
-                url: 'http://192.168.2.139'
+                name: 'Nessus漏洞扫描工具',
+                url: 'http://192.168.2.139:8080/share.cgi?ssid=0UNp3to'
+            }, {
+                name: 'Nagios性能监控工具',
+                url: 'http://192.168.2.139:8080/share.cgi?ssid=0EKm5uY'
             }];
 
             return _react2.default.createElement(
@@ -3355,7 +3362,6 @@ var ResourceTools = function (_React$Component) {
         value: function render() {
             var datas = this.props.resourceTools;
             var dataList = datas.map(function (data, index) {
-                console.log(data);
                 return _react2.default.createElement(
                     'div',
                     { className: 'col-xs-4 tool', key: index },
@@ -3955,7 +3961,7 @@ var Team = function (_React$Component) {
                         _react2.default.createElement(
                             'a',
                             { href: obj.link, target: '_blank' },
-                            _react2.default.createElement('img', { style: { width: '100px', height: 'auto' }, src: obj.img || '/img/bjtu.jpeg' }),
+                            _react2.default.createElement('img', { style: { width: '100px', height: 'auto', border: '1px solid #ddd' }, src: obj.img || '/img/u18.png' }),
                             _react2.default.createElement(
                                 'div',
                                 { className: 'name', style: { marginTop: '20px', color: '#4ab344' } },

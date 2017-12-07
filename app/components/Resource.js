@@ -125,12 +125,15 @@ class Resource extends React.Component {
             name: '网络附属存储（NAS）',
             url: 'http://192.168.2.139'
         }, {
-            name: '网络附属存储（NAS）',
-            url: 'http://192.168.2.139'
+            name: 'LogAnalyzer日志监控工具',
+            url: 'http://192.168.2.139:8080/share.cgi?ssid=0foCuHJ'
         }, {
-            name: '网络附属存储（NAS）',
-            url: 'http://192.168.2.139'
-        }, ];
+            name: 'Nessus漏洞扫描工具',
+            url: 'http://192.168.2.139:8080/share.cgi?ssid=0UNp3to'
+        }, {
+            name: 'Nagios性能监控工具',
+            url: 'http://192.168.2.139:8080/share.cgi?ssid=0EKm5uY'
+        }];
 
         return (
             <div className="resource clearfix">

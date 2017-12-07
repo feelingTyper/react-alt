@@ -10,7 +10,6 @@ class ResourceTools extends React.Component {
     render() {
         let datas = this.props.resourceTools;
         let dataList = datas.map((data, index) => {
-            console.log(data);
             return (
                 <div className="col-xs-4 tool" key={index}>
                 <a className="clearfix" href={data.url} target="_blank">

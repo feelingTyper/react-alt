@@ -253,7 +253,7 @@ ul {
 .project .outline {
   padding-top: 20px;
   padding-bottom: 50px;
-  margin: 100px 0;
+  margin-bottom: 100px;
 }
 .project .titon {
   font-size: 32px;
@@ -312,6 +312,7 @@ ul {
 }
 .project .project-title a {
   color: #4ab344;
+  display: block;
 }
 .project .doing {
   margin-bottom: 40px;
@@ -552,13 +553,12 @@ ul {
 }
 .tool div {
   margin-left: 20px;
-  float: left;
   line-height: 50px;
 }
 .tool a {
   display: block;
   text-align: center;
-  padding: 10px 20px;
+  padding: 20px 30px;
   color: #3ab344;
   border: 1px solid #3ab344;
 }
