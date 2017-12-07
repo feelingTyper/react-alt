@@ -1876,15 +1876,70 @@ var Journal = function (_React$Component) {
         value: function render() {
 
             var Resources = {
+
                 journal: [{
                     id: 1,
                     name: '0.0【标准类】GB-T 20984-2007 信息安全技术信息安全风险评估规范.pdf'
                 }, {
-                    name: 'semantic method to just the page.',
-                    url: 'http://baidu.com'
+                    id: 2,
+                    name: '0.1【综述类】网络态势感知研究-软件学报-2010年7月-龚正虎.pdf'
                 }, {
-                    name: 'semantic method to just the page.',
-                    url: '/'
+                    id: 3,
+                    name: '0.2【综述类】网络态势感知系统研究综述-计算机科学2-2006年-王慧强.pdf'
+                }, {
+                    id: 4,
+                    name: '1.1【一级学报论文】面向多步攻击的网络安全态势评估方法-通信学报-2017年1月-杨豪璞.pdf'
+                }, {
+                    id: 5,
+                    name: '1.2【一级学报论文】网络安全态势认知融合感控模型-软件学报-2016年-刘效武.pdf'
+                }, {
+                    id: 6,
+                    name: '1.3【一级学报论文】基于多选项二次联合背包的态势感知资源分配算法-通信学报-2016年12月-孙岩炜.pdf'
+                }, {
+                    id: 7,
+                    name: '1.4【一级学报论文】基于环境属性的网络威胁态势量化评估方法-软件学报-2015年-席荣荣.pdf'
+                }, {
+                    id: 8,
+                    name: '1.5【一级学报论文】一种改进的网络安全态势量化评估方法-计算机学报-2015年4月-席荣荣.pdf'
+                }, {
+                    id: 9,
+                    name: '1.6【一级学报论文】在线监测的路由器安全威胁态势量化评估方法-通信学报-2013年11月-杨君刚.pdf'
+                }, {
+                    id: 10,
+                    name: '1.7【一级学报论文】基于Markov博弈模型的网络安全态势感知方法-软件学报-2011年-张勇.pdf'
+                }, {
+                    id: 11,
+                    name: '1.8【一级学报论文】基于日志审计与性能修正算法的网络安全态势评估模型-计算机学报-2009年4月-韦勇.pdf'
+                }, {
+                    id: 12,
+                    name: '1.9【一级学报论文】层次化网络安全威胁态势量化评估方法-软件学报-2006年4月-陈秀真.pdf'
+                }, {
+                    id: 13,
+                    name: '2.1【EI检索论文】一种基于目标攻击图的态势威胁评估方法-北京邮电大学学报-2015年2月-刘威歆.pdf'
+                }, {
+                    id: 14,
+                    name: '2.2【EI检索论文】层次化网络信息内容安全事件态势评估模型-吉林大学学报(工学版)-2016年3月-葛琳.pdf'
+                }, {
+                    id: 15,
+                    name: '2.3【EI检索论文】基于聚类分析的网络安全态势评估方法-上海交通大学学报-2016年9月-文志诚.pdf'
+                }, {
+                    id: 16,
+                    name: '2.4【EI检索论文】基于时间序列分析的网络安全态势预测-华南理工大学学报(自然科学版)-2016年5月-文志诚.pdf'
+                }, {
+                    id: 17,
+                    name: '2.5【EI检索论文】基于主机与云分析结合的轻量级威胁感知系统-华中科技大学学报-2016年3月-彭国军.pdf'
+                }, {
+                    id: 18,
+                    name: '2.6【EI检索论文】态势感知水平的解析化度量模型-系统工程与电子技术-2016年8月-张东戈.pdf'
+                }, {
+                    id: 19,
+                    name: '2.7【EI检索论文】工控网络安全态势感知算法实现-控制理论与应用-2016年8月-陆耿虹.pdf'
+                }, {
+                    id: 20,
+                    name: '2.8【EI检索论文】基于APDE-RBF神经网络的网络安全态势预测方法-系统工程与电子技术-2016年12月-李方伟.pdf'
+                }, {
+                    id: 21,
+                    name: '2.9【EI检索论文】基于信息融合的网络安全态势量化评估方法-北京航空航天大学学报-2016年8月-文志诚.pdf'
                 }]
             };
 
@@ -2325,7 +2380,7 @@ var News = function (_React$Component) {
 exports.default = News;
 
 },{"./HomeModuleTitle":17,"react":"react"}],25:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -2333,9 +2388,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _ResourceDesBlock = require('./ResourceDesBlock');
+
+var _ResourceDesBlock2 = _interopRequireDefault(_ResourceDesBlock);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2351,16 +2410,92 @@ var Patent = function (_React$Component) {
     function Patent(props) {
         _classCallCheck(this, Patent);
 
-        return _possibleConstructorReturn(this, (Patent.__proto__ || Object.getPrototypeOf(Patent)).call(this, props));
+        // this.state = FooterStore.getState();
+        var _this = _possibleConstructorReturn(this, (Patent.__proto__ || Object.getPrototypeOf(Patent)).call(this, props));
+
+        _this.onChange = _this.onChange.bind(_this);
+        return _this;
     }
 
     _createClass(Patent, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // FooterStore.listen(this.onChange);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            // FooterStore.unlisten(this.onChange);
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(state) {
+            this.setState(state);
+        }
+    }, {
+        key: 'render',
         value: function render() {
+
+            var Resources = {
+                journal: [{
+                    id: 27,
+                    name: '5.CN201510907420-基于大数据的网络安全态势感知预警方法-2015年12月-国家电网-刘世民.pdf'
+                }, {
+                    id: 28,
+                    name: '6.CN201510815368-一种基于SDN 的多域网络安全态势感知模型-2015年11月-成都电子科技大学-唐勇.pdf'
+                }, {
+                    id: 29,
+                    name: '7.CN201510593297-基于模糊粗糙集的网络安全态势评估方法-2015年9月-杭州安恒-范渊.pdf'
+                }, {
+                    id: 30,
+                    name: '8.CN201510139813-一种基于证据理论的网络安全态势预测方法-2015年3月-信息工程大学-汪永伟.pdf'
+                }, {
+                    id: 31,
+                    name: '9.CN201410826302-一种软件定义网络安全态势评估方法-2014年12月-西安电子科技大学-李兴华、马建峰.pdf'
+                }, {
+                    id: 32,
+                    name: '10.CN201410785403-一种态势感知方法和装置-2014年12月-电科集团第十五所-黄文雄.pdf'
+                }, {
+                    id: 33,
+                    name: '11.CN201410549654-一种基于隐Markow 模型的网络安全态势感知方法-2014年10月-江苏博智-傅涛.pdf'
+                }, {
+                    id: 34,
+                    name: '12.CN201410505350-一种网络安全态势感知系统及方法-2014年9月-智慧城市信息技术有限公司-萧海东.pdf'
+                }, {
+                    id: 35,
+                    name: '13.CN201410374744-面向网络态势感知的多级别网络系统-2014年7月-91655部队-王璐.pdf'
+                }, {
+                    id: 36,
+                    name: '14.CN201410120989-一种基于日志和SNMP信息融合的网络安全态势感知分析方法-2014年3月-哈工大-王慧强.pdf'
+                }, {
+                    id: 37,
+                    name: '15.CN201310544315-一种网络安全态势预测方法及系统-2013年11月-中科院计算所-金舒原.pdf'
+                }, {
+                    id: 38,
+                    name: '16.CN201310418696-基于模糊动态贝叶斯网络的态势威胁评估-2014年1月-覃征.pdf'
+                }, {
+                    id: 39,
+                    name: '17.CN201310208995-一种虚拟化环境下的云安全监测方法-2013年5月-浪潮集团-宋桂香.pdf'
+                }, {
+                    id: 40,
+                    name: '18.CN201110443114-一种网络安全态势评估方法-2011年12月-中国航天706所-石波.pdf'
+                }, {
+                    id: 41,
+                    name: '19.CN201110316666-一种面向云计算的网络安全预警方法-2011年10月-国网电力研究院-邓松.pdf'
+                }, {
+                    id: 42,
+                    name: '20.CN201010233950-基于信息关联的网络安全态势感知系统-2010年7月-中科院计算所-席荣荣.pdf'
+                }]
+            };
+
             return _react2.default.createElement(
-                "div",
-                { className: "container" },
-                "Patent"
+                'div',
+                { className: 'container resource', style: { marginTop: '50px' } },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'resource-des' },
+                    _react2.default.createElement(_ResourceDesBlock2.default, { resource: Resources })
+                )
             );
         }
     }]);
@@ -2370,7 +2505,7 @@ var Patent = function (_React$Component) {
 
 exports.default = Patent;
 
-},{"react":"react"}],26:[function(require,module,exports){
+},{"./ResourceDesBlock":31,"react":"react"}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3181,7 +3316,7 @@ var ResourceTools = function (_React$Component) {
 exports.default = ResourceTools;
 
 },{"./HomeModuleTitle":17,"./ResourceDataBlock":29,"react":"react"}],33:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3189,7 +3324,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -3211,46 +3346,50 @@ var ResourcesMore = function (_React$Component) {
     }
 
     _createClass(ResourcesMore, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "container resources-more" },
+                'div',
+                { style: { borderTop: '1px solid #ddd', marginTop: '-20px', paddingTop: '50px' } },
                 _react2.default.createElement(
-                    "div",
-                    { className: "title row clearfix" },
+                    'div',
+                    { className: 'container resources-more' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "col-xs-4 journal" },
+                        'div',
+                        { className: 'title row clearfix' },
                         _react2.default.createElement(
-                            "a",
-                            { href: "journal" },
-                            "\u671F\u520A"
+                            'div',
+                            { className: 'col-xs-4 journal' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'journal' },
+                                '\u671F\u520A'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-4 standard' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'standard' },
+                                '\u6807\u51C6'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-xs-4 patent' },
+                            _react2.default.createElement(
+                                'a',
+                                { href: 'patent' },
+                                '\u4E13\u5229'
+                            )
                         )
                     ),
                     _react2.default.createElement(
-                        "div",
-                        { className: "col-xs-4 standard" },
-                        _react2.default.createElement(
-                            "a",
-                            { href: "standard" },
-                            "\u6807\u51C6"
-                        )
-                    ),
-                    _react2.default.createElement(
-                        "div",
-                        { className: "col-xs-4 patent" },
-                        _react2.default.createElement(
-                            "a",
-                            { href: "patent" },
-                            "\u4E13\u5229"
-                        )
+                        'div',
+                        { className: 'child' },
+                        this.props.children
                     )
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "child" },
-                    this.props.children
                 )
             );
         }
@@ -3520,7 +3659,7 @@ var ServicesList = function (_React$Component) {
 exports.default = ServicesList;
 
 },{"react":"react"}],36:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3528,9 +3667,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _ResourceDesBlock = require('./ResourceDesBlock');
+
+var _ResourceDesBlock2 = _interopRequireDefault(_ResourceDesBlock);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3546,16 +3689,60 @@ var Standard = function (_React$Component) {
     function Standard(props) {
         _classCallCheck(this, Standard);
 
-        return _possibleConstructorReturn(this, (Standard.__proto__ || Object.getPrototypeOf(Standard)).call(this, props));
+        // this.state = FooterStore.getState();
+        var _this = _possibleConstructorReturn(this, (Standard.__proto__ || Object.getPrototypeOf(Standard)).call(this, props));
+
+        _this.onChange = _this.onChange.bind(_this);
+        return _this;
     }
 
     _createClass(Standard, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            // FooterStore.listen(this.onChange);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            // FooterStore.unlisten(this.onChange);
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(state) {
+            this.setState(state);
+        }
+    }, {
+        key: 'render',
         value: function render() {
+
+            var Resources = {
+
+                journal: [{
+                    id: 22,
+                    name: 'GBT 20270-2006 信息安全技术 网络基础安全技术要求.pdf'
+                }, {
+                    id: 23,
+                    name: 'GBT 28458-2012信息安全技术 安全漏洞标识与描述规范.pdf'
+                }, {
+                    id: 24,
+                    name: 'GBT 30270-2013信息技术 安全技术 信息技术安全性评估方法.doc'
+                }, {
+                    id: 25,
+                    name: 'GBT 30279-2013信息安全技术 安全漏洞等级划分指南.pdf'
+                }, {
+                    id: 26,
+                    name: '信息安全国家标准目录-全国信息安全标准化技术委员会.pdf'
+                }]
+            };
+
             return _react2.default.createElement(
-                "div",
-                { className: "container" },
-                "more"
+                'div',
+                { className: 'container resource', style: { marginTop: '50px' } },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'resource-des' },
+                    _react2.default.createElement(_ResourceDesBlock2.default, { resource: Resources })
+                )
             );
         }
     }]);
@@ -3565,7 +3752,7 @@ var Standard = function (_React$Component) {
 
 exports.default = Standard;
 
-},{"react":"react"}],37:[function(require,module,exports){
+},{"./ResourceDesBlock":31,"react":"react"}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
