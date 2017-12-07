@@ -87,7 +87,7 @@ class ServiceStore {
 				}
 			}, {
 				name: 'QNAP存储箱',
-				url: 'http://192.168.10.139',
+				url: 'http://192.168.2.139',
 				'detail': 'QNAP存储箱，云存储系统文件上传下载，备份分享等功能'
 			}, {
 				name: 'FTP从服务器',
@@ -99,7 +99,7 @@ class ServiceStore {
 				'detail': 'GitLab代码托管服务器，代码提交，下载，版本控制，团队合作等功能'
 			}, {
 				name: '日志监控',
-				url: 'http://192.168.10.82',
+				url: 'http://192.168.10.82/loganalyzer',
 				'detail': '日志监控服务器，提供日志监控，数据采集，性能检测等功能'
 			}]
 		}, {

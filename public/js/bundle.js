@@ -638,6 +638,17 @@ var DevicesList = function (_React$Component) {
         value: function componentDidMount() {
             _DevicesListStores2.default.listen(this.onChange);
             var _top = $('.dev-list').offset().top;
+            $(document).scroll(function () {
+                if ($(document).scrollTop() > 300) {
+                    $('.dev-list').css({
+                        top: 0
+                    });
+                } else {
+                    $('.dev-list').css({
+                        top: _top
+                    });
+                }
+            });
         }
     }, {
         key: 'componentWillUnmount',
@@ -652,7 +663,7 @@ var DevicesList = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var deviceNames = ['锐捷交换机', '锐捷防火墙', '思科交换机', '天镜漏洞扫描系统', '天融信防火墙', '天融信入侵检测系统', '天融信入侵防御系统', '网闸'].map(function (item, index) {
+            var deviceNames = ['锐捷交换机', '锐捷防火墙', '思科交换机', 'TP-LINK交换机', '天镜漏洞扫描系统', '天融信防火墙', '天融信入侵检测系统', '天融信入侵防御系统', '天融信网闸', '惠普服务器', 'IBM服务器', 'NAS磁盘柜', '思科路由器'].map(function (item, index) {
                 var anchor = '#' + index;
                 return _react2.default.createElement(
                     'li',
@@ -674,39 +685,49 @@ var DevicesList = function (_React$Component) {
                     date: '2017-3-3',
                     corporation: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4E0B\u8FDE\u53F0\u5F0F\u670D\u52A1\u5668\uFF0C\u5305\u542B\u5185\u90E8\u7528\u6237\u533A\u57DF\uFF0C\u5305\u62EC\u4E00\u4E9B\u9776\u673A,s\n            nort\u670D\u52A1\u4E3B\u673A\u3002\u662F\u7528\u6237\u57DF\u7684\u63A5\u5165\u4EA4\u6362\u673A\u3002'
             }, {
                 name: '锐捷防火墙',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
                     name: '锐捷防火墙',
-                    version: 'RG-1600i',
+                    version: 'RG-WALL1600-SI',
                     date: '2017-3-3',
                     corporation: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u9510\u6377 RG-WALL 1600-si\u662F\u9510\u6377\u7F51\u7EDC\u63A8\u51FA\u7684\u4E1A\u5185\u96C6\u5B89\u5168\u3001\u8DEF\u7531\u3001\u4EA4\u6362\u4E8E\u4E00\u4F53\u7684\u9632\u706B\u5899\u4EA7\u54C1\uFF0C\n            \u5177\u6709\u63A5\u53E3\u4E30\u5BCC\u3001\u914D\u7F6E\u7075\u6D3B\u7684\u7279\u70B9\u3002\u5B83\u53EF\u4EE5\u4E3A\u7528\u6237\u63D0\u4F9B\u5B8C\u6574\u7684\u7AEF\u5230\u7AEF\u89E3\u51B3\u65B9\u6848\uFF0C\u662F\u7F51\u7EDC\u51FA\u53E3\u548C\u4E0D\u540C\u7B56\u7565\u533A\n            \u57DF\u4E4B\u95F4\u5B89\u5168\u4E92\u8054\u7684\u7406\u60F3\u9009\u62E9\uFF0C\u6EE1\u8DB3\u4E2D\u5C0F\u4F01\u4E1A\u4E0D\u65AD\u53D8\u5316\u7684\u7F51\u7EDC\u73AF\u5883\u548C\u65E5\u76CA\u4E30\u5BCC\u7F51\u7EDC\u5E94\u7528\u7684\u9700\u8981\u3002\u5728\u672C\u7F51\u7EDC\n            \u7ED3\u6784\u4E2D\u5212\u5206\u4E86\u7528\u6237\u57DF\u3001\u91C7\u96C6\u6C47\u805A\u57DF\u3001\u5206\u6790\u57DF\u3001\u5185\u7F51\u7528\u6237\u63A5\u5165\u57DF\u3002'
             }, {
                 name: '思科交换机',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
-                    name: '思科交换机',
-                    version: 'RG-1600i',
+                    name: '思科200E系列交换机',
+                    version: '200E',
                     date: '2017-3-3',
                     corp: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u662FDMZ\u7684\u63A5\u5165\u4EA4\u6362\u63A5\uFF0C\u5728\u4EA4\u6362\u673A\u4E0B\u8FDE\u63A5HP\u670D\u52A1\u5668\uFF0C\u642D\u5EFA\u5404\u7C7B\u670D\u52A1\uFF0C\u5305\u62ECmail\u3001\n            ftp\u3001git\u7B49'
             }, {
-                name: '天镜漏洞扫描系统',
+                name: 'TP-LINK交换机',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
-                    name: '天镜漏洞扫描系统',
+                    name: 'TP-LINK交换机',
+                    version: '200E',
+                    date: '2017-3-3',
+                    corp: '锐捷'
+                },
+                detail: '\u5212\u5206vlan\uFF0C\u5728\u672C\u7F51\u7EDC\u7ED3\u6784\u4E2D\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4E0B\u8FDE\u5929\u955C\u6F0F\u6D1E\u626B\u63CF\uFF0C\u5B58\u50A8\u670D\u52A1\u5668\uFF0C\u662F\u91C7\u96C6\u6C47\u96C6\u57DF\u7684\u63A5\u5165\u4EA4\u6362\u673A\u3002'
+            }, {
+                name: '启明星辰天镜漏洞扫描',
+                pic: '/img/ruijie_sw_1.png',
+                outline: {
+                    name: '启明星辰天镜漏洞扫描',
                     version: 'RG-1600i',
                     date: '2017-3-3',
                     corporation: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u7528\u6237\u7BA1\u7406\uFF0C\u7528\u6237\u5BA1\u8BA1\uFF0C\u4EFB\u52A1\u7BA1\u7406\uFF0C\u7B56\u7565\u7BA1\u7406\uFF0C\u626B\u63CF\u529F\u80FD\uFF0C\u8D44\u4EA7\u7BA1\u7406\uFF0C\u62A5\u8868\u5FEB\u901F\u67E5\u770B\uFF0C\n            \u62A5\u8868\u7BA1\u7406\uFF0C\u62A5\u544A\u5BFC\u51FA\uFF0C\u5347\u7EA7\u529F\u80FD\uFF0C\u68C0\u6D4B\u5DE5\u5177\uFF0C\u7B2C\u4E09\u65B9\u63A5\u53E3\uFF0C\u6F0F\u6D1E\u9A8C\u8BC1'
             }, {
-                name: '天融信NGFW防火墙（NGFW4000-UF）',
+                name: '天融信防火墙',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
                     name: '天融信NGFW防火墙（NGFW4000-UF）',
@@ -714,37 +735,77 @@ var DevicesList = function (_React$Component) {
                     date: '2017-3-3',
                     corporation: '锐捷'
                 },
-                detail: 'NGFW ® 下一代防火墙是天融信公司凭借多年以来积累的安全产品研发与部署经验，为适应各个行业不同的网络应用环境，以及满足各类用户差异化的安全防护需求，设计并研发的多业务高性能防火墙产品。'
+                detail: 'NGFW \xAE \u4E0B\u4E00\u4EE3\u9632\u706B\u5899\u662F\u5929\u878D\u4FE1\u516C\u53F8\u51ED\u501F\u591A\u5E74\u4EE5\u6765\u79EF\u7D2F\u7684\u5B89\u5168\u4EA7\u54C1\u7814\u53D1\u4E0E\u90E8\u7F72\u7ECF\u9A8C\uFF0C\n            \u4E3A\u9002\u5E94\u5404\u4E2A\u884C\u4E1A\u4E0D\u540C\u7684\u7F51\u7EDC\u5E94\u7528\u73AF\u5883\uFF0C\u4EE5\u53CA\u6EE1\u8DB3\u5404\u7C7B\u7528\u6237\u5DEE\u5F02\u5316\u7684\u5B89\u5168\u9632\u62A4\u9700\u6C42\uFF0C\u8BBE\u8BA1\u5E76\u7814\u53D1\n            \u7684\u591A\u4E1A\u52A1\u9AD8\u6027\u80FD\u9632\u706B\u5899\u4EA7\u54C1\u3002'
             }, {
                 name: '天融信入侵检测系统',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
-                    name: '天融信入侵检测系统',
+                    name: '天融信入侵检测（IDS）TopSentry',
                     version: 'RG-1600i',
                     date: '2017-3-3',
                     corp: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u5929\u878D\u4FE1\u516C\u53F8\u81EA\u4E3B\u7814\u53D1\u7684\u5165\u4FB5\u68C0\u6D4B\u7CFB\u7EDF\uFF08\u4EE5\u4E0B\u7B80\u79F0TopSentry\u4EA7\u54C1\uFF09\u91C7\u7528\u65C1\u8DEF\u90E8\u7F72\u65B9\u5F0F\uFF0C\n            \u80FD\u591F\u5B9E\u65F6\u68C0\u6D4B\u5305\u62EC\u6EA2\u51FA\u653B\u51FB\u3001RPC\u653B\u51FB\u3001WebCGI\u653B\u51FB\u3001\u62D2\u7EDD\u670D\u52A1\u653B\u51FB\u3001\u6728\u9A6C\u3001\u8815\u866B\u3001\u7CFB\u7EDF\u6F0F\u6D1E\u7B49\u8D85\n            \u8FC74000\u79CD\u7F51\u7EDC\u653B\u51FB\u884C\u4E3A\u3002TopSentry\u4EA7\u54C1\u8FD8\u5177\u6709\u5E94\u7528\u534F\u8BAE\u667A\u80FD\u8BC6\u522B\u3001\u7F51\u7EDC\u75C5\u6BD2\u68C0\u6D4B\u3001\u4E0A\u7F51\u884C\u4E3A\u76D1\u63A7\n            \u548C\u65E0\u7EBF\u5165\u4FB5\u9632\u5FA1\u7B49\u529F\u80FD\uFF0C\u4E3A\u7528\u6237\u63D0\u4F9B\u4E86\u5B8C\u6574\u7684\u7ACB\u4F53\u5F0F\u7F51\u7EDC\u5B89\u5168\u76D1\u63A7\u3002'
             }, {
                 name: '天融信入侵防御系统',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
-                    name: '天融信入侵防御系统',
+                    name: '天融信入侵防御（IPS）TopIDP',
                     version: 'RG-1600i',
                     date: '2017-3-3',
                     corp: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u5929\u878D\u4FE1\u516C\u53F8\u81EA\u4E3B\u7814\u53D1\u7684\u5165\u4FB5\u9632\u5FA1\u7CFB\u7EDF\uFF08\u4EE5\u4E0B\u7B80\u79F0TopIDP\u4EA7\u54C1\uFF09\u91C7\u7528\u5728\u7EBF\u90E8\u7F72\u65B9\u5F0F\uFF0C\n            \u80FD\u591F\u5B9E\u65F6\u68C0\u6D4B\u548C\u963B\u65AD\u5305\u62EC\u6EA2\u51FA\u653B\u51FB\u3001RPC\u653B\u51FB\u3001WebCGI\u653B\u51FB\u3001\u62D2\u7EDD\u670D\u52A1\u653B\u51FB\u3001\u6728\u9A6C\u3001\u8815\u866B\u3001\u7CFB\n            \u7EDF\u6F0F\u6D1E\u7B49\u8D85\u8FC74000\u79CD\u7F51\u7EDC\u653B\u51FB\u884C\u4E3A\uFF0C\u53EF\u4EE5\u6709\u6548\u7684\u4FDD\u62A4\u7528\u6237\u7F51\u7EDCIT\u670D\u52A1\u8D44\u6E90\u3002TopIDP\u4EA7\u54C1\u8FD8\u5177\n            \u6709\u5E94\u7528\u534F\u8BAE\u667A\u80FD\u8BC6\u522B\u3001\u6D41\u91CF\u63A7\u5236\u3001\u7F51\u7EDC\u75C5\u6BD2\u9632\u5FA1\u3001\u4E0A\u7F51\u884C\u4E3A\u7BA1\u7406\u548C\u65E0\u7EBF\u5165\u4FB5\u9632\u5FA1\u7B49\u529F\u80FD\uFF0C\u4E3A\n            \u7528\u6237\u63D0\u4F9B\u4E86\u5B8C\u6574\u7684\u7ACB\u4F53\u5F0F\u7F51\u7EDC\u5B89\u5168\u9632\u62A4\u3002'
             }, {
-                name: '网闸',
+                name: '天融信网闸',
                 pic: '/img/ruijie_sw_1.png',
                 outline: {
-                    name: '网闸',
-                    version: 'RG-1600i',
+                    name: '天融信网闸TopRules8000',
+                    version: 'TopRules8000',
                     date: '2017-3-3',
                     corp: '锐捷'
                 },
-                detail: 'asdfasdfasdfasdasdfasdfasdfhasdfasdfasdf'
+                detail: '\u5929\u878D\u4FE1\u5B89\u5168\u9694\u79BB\u4E0E\u4FE1\u606F\u4EA4\u6362\u7CFB\u7EDFTopRules\u662F\u5317\u4EAC\u5929\u878D\u4FE1\u516C\u53F8\u57FA\u4E8E\u516C\u53F8\u81EA\u4E3B\u77E5\u8BC6\u4EA7\u6743\u7684\u5B89\u5168\u64CD\u4F5C\n            \u7CFB\u7EDFTOS (Topsec Operating System) \u548C\u591A\u5E74\u7F51\u7EDC\u5B89\u5168\u4EA7\u54C1\u7814\u53D1\u7ECF\u9A8C\u7814\u53D1\u800C\u6210\u7684\uFF0C\u8BE5\u7CFB\u7EDF\u91C7\u7528\u201C2+1\u201D\u7CFB\n            \u7EDF\u67B6\u6784\uFF0C\u901A\u8FC7\u5BF9\u4FE1\u606F\u8FDB\u884C\u843D\u5730\u3001\u8FD8\u539F\u3001\u626B\u63CF\u3001\u8FC7\u6EE4\u3001\u9632\u75C5\u6BD2\u3001\u5165\u4FB5\u68C0\u6D4B\u3001\u5BA1\u8BA1\u7B49\u4E00\u7CFB\u5217\u5B89\u5168\u5904\u7406\u673A\u5236\uFF0C\u6709\u6548\n            \u9632\u6B62\u9ED1\u5BA2\u653B\u51FB\u3001\u6076\u610F\u4EE3\u7801\u548C\u75C5\u6BD2\u6E17\u5165\uFF0C\u540C\u65F6\u9632\u6B62\u5185\u90E8\u673A\u5BC6\u4FE1\u606F\u6CC4\u9732\uFF0C\u5B9E\u73B0\u7F51\u95F4\u5B89\u5168\u9694\u79BB\u548C\u4FE1\u606F\u4EA4\u6362\u3002'
+            }, {
+                name: 'HP服务器：',
+                pic: '/img/ruijie_sw_1.png',
+                outline: {
+                    name: 'HP服务器：',
+                    version: '',
+                    date: '2017-3-3',
+                    corp: '惠普'
+                },
+                detail: '\u505A\u4E86\u865A\u62DF\u5316\uFF0C\u5E76\u5728\u865A\u62DF\u5316\u7684\u57FA\u7840\u4E0A\u642D\u5EFA\u4E86DMZ\u57DF\u7684\u5404\u7C7B\u670D\u52A1\u3002'
+            }, {
+                name: 'IBM服务器：',
+                pic: '/img/ruijie_sw_1.png',
+                outline: {
+                    name: 'IBM服务器：',
+                    version: '',
+                    date: '2017-3-3',
+                    corp: 'IBM'
+                },
+                detail: '\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4F5C\u4E3A\u5206\u6790\u57DF\uFF0C\u9884\u8BBE\u5404\u7C7B\u5206\u6790\u5E73\u53F0\uFF0C\u5305\u62ECtensorflow\uFF0Cweka\u7B49\u3002'
+            }, {
+                name: 'NAS磁盘柜',
+                pic: '/img/ruijie_sw_1.png',
+                outline: {
+                    name: 'NAS磁盘柜',
+                    version: 'QNAP TS-653A',
+                    date: '2017-3-3',
+                    corp: ''
+                },
+                detail: '\u4E0A\u8FDECISCO\u8DEF\u7531\u5668\uFF0C\u4F5C\u4E3A\u5185\u90E8\u7528\u6237\u5B58\u50A8\u4F7F\u7528\uFF0C\u53EF\u8FDE\u63A5\u65E0\u7EBF\u63A5\u5165\u3002'
+            }, {
+                name: 'CISCO路由器',
+                pic: '/img/ruijie_sw_1.png',
+                outline: {
+                    name: 'NAS磁盘柜',
+                    version: 'QNAP TS-653A',
+                    date: '2017-3-3',
+                    corp: ''
+                },
+                detail: '\u4E0A\u8FDE\u9510\u6377\u9632\u706B\u5899\uFF0C\u4E0B\u8FDEQnap\u78C1\u76D8\u67DC\uFF0C\u4F5C\u4E3A\u5185\u7F51\u7528\u6237\u65E0\u7EBF\u63A5\u5165\u70B9\u3002'
             }].map(function (item, index) {
                 return _react2.default.createElement(
                     'li',
@@ -861,7 +922,7 @@ var DevicesList = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { className: 'main', style: { marginTop: '50px', backgroundColor: '#fff' } },
+                    { className: 'main', style: { marginTop: '50px', backgroundColor: '#eee', paddingBottom: '200px' } },
                     _react2.default.createElement(
                         'div',
                         { className: 'row clearfix' },
@@ -4596,7 +4657,7 @@ var ServiceStore = function () {
 				}
 			}, {
 				name: 'QNAP存储箱',
-				url: 'http://192.168.10.139',
+				url: 'http://192.168.2.139',
 				'detail': 'QNAP存储箱，云存储系统文件上传下载，备份分享等功能'
 			}, {
 				name: 'FTP从服务器',
@@ -4608,7 +4669,7 @@ var ServiceStore = function () {
 				'detail': 'GitLab代码托管服务器，代码提交，下载，版本控制，团队合作等功能'
 			}, {
 				name: '日志监控',
-				url: 'http://192.168.10.82',
+				url: 'http://192.168.10.82/loganalyzer',
 				'detail': '日志监控服务器，提供日志监控，数据采集，性能检测等功能'
 			}]
 		}, {
