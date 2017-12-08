@@ -1,7 +1,5 @@
 /node_modules
 /bower_components
 /logs
-/store
 /store1
 package-lock.json
-
