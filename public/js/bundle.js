@@ -3103,10 +3103,15 @@ var ResourceDataBlock = function (_React$Component) {
         key: 'render',
         value: function render() {
             var data = this.props.resourceData;
+            console.log(data);
             var usefor = this.props.usefor;
             var title = usefor == 'dataset' ? '数据集' : '工具';
             var rows = data.collections.map(function (item, index) {
-                var url = '/download/' + item.id;
+                if (data.title == '实验室内部数据集') {
+                    var url = '/download/' + item.id;
+                } else {
+                    var url = item.url;
+                }
                 return _react2.default.createElement(
                     'div',
                     { key: index },
@@ -3912,7 +3917,12 @@ var Team = function (_React$Component) {
                     name: '王健',
                     link: 'http://faculty.bjtu.edu.cn/8203/',
                     detail: '讲师，研究方向量子密码',
-                    img: '/img/teacher_wang.jpg'
+                    img: ''
+                }, {
+                    name: '韩磊',
+                    link: 'http://youngyu.net/',
+                    detail: '博士，研究方向，态势感知',
+                    img: ''
                 }]
             }, {
                 category: '博士',
@@ -4022,7 +4032,7 @@ var Team = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'col-md-6' },
-                                _react2.default.createElement('img', { className: 'img-responsive', src: 'img/1.jpg' })
+                                _react2.default.createElement('img', { className: 'img-responsive', src: 'img/team.jpg' })
                             ),
                             _react2.default.createElement(
                                 'div',

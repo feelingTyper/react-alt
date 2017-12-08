@@ -7,10 +7,15 @@ class ResourceDataBlock extends React.Component {
 
     render() {
         let data = this.props.resourceData;
+        console.log(data);
         let usefor = this.props.usefor;
         let title = usefor == 'dataset' ? '数据集' : '工具';
         let rows = data.collections.map((item, index) => {
-            let url = '/download/' + item.id;
+            if (data.title == '实验室内部数据集') {
+                var url = '/download/' + item.id;
+            } else {
+                var url = item.url;
+            }
             return (
                 <div key={index}>
                     <span>{item.name}</span>

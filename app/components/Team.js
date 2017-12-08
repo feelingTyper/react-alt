@@ -30,7 +30,12 @@ class Team extends React.Component {
                 name: '王健',
                 link: 'http://faculty.bjtu.edu.cn/8203/',
                 detail: '讲师，研究方向量子密码',
-                img: '/img/teacher_wang.jpg'
+                img: ''
+            }, {
+                name: '韩磊',
+                link: 'http://youngyu.net/',
+                detail: '博士，研究方向，态势感知',
+                img: ''
             }]
         }, {
             category: '博士',
@@ -101,7 +106,7 @@ class Team extends React.Component {
                         <div style={{marginTop: '50px'}}><HomeModuleTitle title={{cn: '我们的团队', en:'OUR GROUP'}} /></div>
                         <div className="row" style={{marginBottom: '50px'}}>
                             <div className="col-md-6">
-                                <img className="img-responsive" src="img/1.jpg" />
+                                <img className="img-responsive" src="img/team.jpg" />
                             </div>
                             <div className="col-xs-6">
                                 <p style={{lineHeight: '30px', textIndent: '25px'}}>
